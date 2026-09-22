@@ -1,24 +1,22 @@
-"use client";
-
 import React from "react";
 import { landingPageData } from "./pagedata";
 import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
-import { StarIcon, TreeIcon, SettleIcon } from "@/src/utils/icons";
+
 
 export const About: React.FC = () => {
   return (
-    <section className="relative w-full bg-[#F5F5EB] pt-12 sm:pt-16 md:pt-[111px] pb-12 sm:pb-16 md:pb-24 px-4 sm:px-8 lg:px-[100px] border-b border-sand-border">
+    <section className=" bg-[#F5F5EB] pt-12 sm:pt-16 md:pt-[111px] pb-12 sm:pb-16 md:pb-24 px-4 sm:px-8 lg:px-[100px] border-b border-sand-border">
       <div className="mx-auto">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-20 items-center">
           {/* Tag & Title */}
           <div className="space-y-3 sm:space-y-4 text-left">
-            <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
+            <p className="text-[16px]  tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
               {landingPageData.about.tag}
             </p>
 
             <h2
-              className="heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-[#607839] leading-tight lg:leading-[48px] tracking-[0px]"
+              className="heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-[#607839] leading-tight"
               dangerouslySetInnerHTML={{ __html: landingPageData.about.heading }}
             />
           </div>

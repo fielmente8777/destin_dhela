@@ -64,7 +64,7 @@ export const Faqs: React.FC = () => {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="pb-4 sm:pb-5 pr-2 sm:pr-4 text-xs sm:text-sm md:text-[15px] text-[#636B5C] font-dm-sans font-normal leading-relaxed">
+                        <p className="pb-4 sm:pb-5 pr-2 sm:pr-4 text-base sm:text-[18px] text-[#636B5C] font-dm-sans font-normal leading-relaxed">
                           {item.a}
                         </p>
                       </div>
