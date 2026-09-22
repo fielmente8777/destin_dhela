@@ -2,12 +2,14 @@
 
 import React from "react";
 import Image from "next/image";
-import { landingPageData } from "./pagedata";
+import { SafariStargazingProps } from "./pagedata";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
 
-export const SafariStargazing: React.FC = () => {
-  const data = landingPageData.safariStargazing;
+interface Props {
+  data: SafariStargazingProps;
+}
 
+export const SafariStargazing: React.FC<Props> = ({ data }) => {
   return (
     <SectionWithContainer
       sectionId="safari-stargazing"
@@ -22,7 +24,7 @@ export const SafariStargazing: React.FC = () => {
         </p>
 
         <h2
-          className="mt-[8px] heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl text-white leading-tight tracking-[0px]"
+          className="mt-[8px] heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl text-white leading-tight"
           dangerouslySetInnerHTML={{ __html: data.heading }}
         />
       </div>
@@ -37,7 +39,7 @@ export const SafariStargazing: React.FC = () => {
             </p>
 
             <h2
-              className="mt-[8px] heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-white leading-tight lg:leading-[48px] tracking-[0px]"
+              className="mt-[8px] heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-white leading-tight lg:leading-[48px]"
               dangerouslySetInnerHTML={{ __html: data.heading }}
             />
           </div>
@@ -53,7 +55,7 @@ export const SafariStargazing: React.FC = () => {
                   {item.step}
                 </span>
                 <div>
-                  <h3 className="font-varela font-normal capitalize text-[20px] leading-[26px] tracking-[0px] text-[#F7F5EE]">
+                  <h3 className="font-varela font-normal capitalize text-[20px] leading-[26px] text-[#F7F5EE]">
                     {item.title}
                   </h3>
                   <p className="mt-[7px] text-[14px] leading-[20px] font-dm-sans font-normal text-[#BCBCAA]">

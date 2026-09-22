@@ -2,11 +2,15 @@
 
 import React, { useState } from "react";
 import { IoAdd, IoRemove } from "react-icons/io5";
-import { landingPageData } from "./pagedata";
+import { FaqsProps } from "./pagedata";
 import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
 
-export const Faqs: React.FC = () => {
+interface Props {
+  data: FaqsProps;
+}
+
+export const Faqs: React.FC<Props> = ({ data }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -16,20 +20,20 @@ export const Faqs: React.FC = () => {
   return (
     <SectionWithContainer
       sectionId="faqs"
-      sectionClassName="bg-[#FDF9EE] border-b border-[#D6D2C7]/70 relative z-10"
+      sectionClassName="bg-bg-main border-b border-sand-border/70 relative z-10"
       defaultPadding={false}
       containerClassName="pt-12 sm:pt-16 md:pt-[80px] pb-12 sm:pb-16 md:pb-[72px]"
     >
       <div className="flex flex-col lg:flex-row items-start justify-center gap-8 sm:gap-10 lg:gap-[76px]">
         {/* Heading & Actions */}
         <div className="w-full lg:w-[596px] shrink-0 flex flex-col">
-          <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
-            {landingPageData.faqs.tag}
+          <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-tertiary font-normal font-dm-sans">
+            {data.tag}
           </p>
 
           <h2
-            className="mt-[16px] heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-[#607839] leading-tight lg:leading-[48px] tracking-[0px]"
-            dangerouslySetInnerHTML={{ __html: landingPageData.faqs.heading }}
+            className="mt-[16px] heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-primary leading-tight lg:leading-[48px]"
+            dangerouslySetInnerHTML={{ __html: data.heading }}
           />
 
           {/* Desktop Actions */}
@@ -40,8 +44,8 @@ export const Faqs: React.FC = () => {
 
         {/* FAQ Accordion */}
         <div className="w-full lg:w-[647px] shrink-0 flex flex-col">
-          <div className="w-full border-y-[0.5px] divide-y-[0.5px] border-[#614B33] divide-[#614B33] font-sans">
-            {landingPageData.faqs.items.map((item, idx) => {
+          <div className="w-full border-y-[0.5px] divide-y-[0.5px] border-tertiary divide-tertiary font-sans">
+            {data.items.map((item, idx) => {
               const isOpen = openIndex === idx;
               return (
                 <div key={idx} className="transition-colors">
@@ -51,11 +55,11 @@ export const Faqs: React.FC = () => {
                     className="w-full pt-[25px] pb-[25px] flex items-center justify-between gap-3 sm:gap-6 text-left cursor-pointer"
                     aria-expanded={isOpen}
                   >
-                    <span className="font-varela font-normal text-lg sm:text-xl lg:text-[24px] leading-snug lg:leading-[32px] tracking-[0px] capitalize text-[#607839]">
+                    <span className="font-varela font-normal text-lg sm:text-xl lg:text-[24px] leading-snug lg:leading-[32px] capitalize text-primary">
                       {item.q}
                     </span>
 
-                    <span className="shrink-0 text-[#B58A4A] text-lg sm:text-xl">
+                    <span className="shrink-0 text-secondary text-lg sm:text-xl">
                       {isOpen ? <IoRemove /> : <IoAdd />}
                     </span>
                   </button>
@@ -66,7 +70,7 @@ export const Faqs: React.FC = () => {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="pb-4 sm:pb-5 pr-2 sm:pr-4 text-base sm:text-[18px] text-[#636B5C] font-dm-sans font-normal leading-relaxed">
+                      <p className="pb-4 sm:pb-5 pr-2 sm:pr-4 text-base sm:text-[18px] text-body-text font-dm-sans font-normal leading-relaxed">
                         {item.a}
                       </p>
                     </div>

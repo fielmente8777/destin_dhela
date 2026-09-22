@@ -1,13 +1,136 @@
+import { ReactNode } from "react";
 import { SettleIcon, TreeIcon, StarIcon } from "@/src/utils/icons";
+import { contact } from "@/src/utils/constent";
 
-export const landingPageData = {
+export interface HeroProps {
+  logo: string;
+  tag: string;
+  title: string;
+  description: string;
+  benefits: string;
+  images: string[];
+}
+
+export interface StepItem {
+  title: string;
+}
+
+export interface FeatureCardItem {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
+
+export interface AboutProps {
+  tag: string;
+  heading: string;
+  description: string;
+  featureCards: FeatureCardItem[];
+}
+
+export interface AccommodationProps {
+  tag: string;
+  heading: string;
+  subtext: string;
+  bullets: string[];
+  images: string[];
+}
+
+export interface SafariStepItem {
+  step: string;
+  title: string;
+  description: string;
+}
+
+export interface SafariStargazingProps {
+  tag: string;
+  heading: string;
+  image: string;
+  steps: SafariStepItem[];
+}
+
+export interface StargazingBannerProps {
+  tag: string;
+  heading: string;
+  description: string;
+  image: string;
+}
+
+export interface DiningOutletItem {
+  type: "dining" | "grill" | string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+export interface DiningProps {
+  tag: string;
+  heading: string;
+  description: string;
+  image: string;
+  outlets: DiningOutletItem[];
+}
+
+export interface LocationMatrixItem {
+  place: string;
+  distance: string;
+}
+
+export interface LocationProps {
+  tag: string;
+  heading: string;
+  subtext: string;
+  matrix: LocationMatrixItem[];
+}
+
+export interface GalleryProps {
+  tag: string;
+  heading: string;
+  subtext: string;
+  images: string[];
+}
+
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+export interface FaqsProps {
+  tag: string;
+  heading: string;
+  items: FaqItem[];
+}
+
+export interface ContactProps {
+  location: string;
+  phone: string;
+  email: string;
+  copyright: string;
+}
+
+export interface LandingPageDataProps {
+  offer: string[];
+  hero: HeroProps;
+  step: StepItem[];
+  about: AboutProps;
+  accommodation: AccommodationProps;
+  safariStargazing: SafariStargazingProps;
+  stargazingBanner: StargazingBannerProps;
+  dining: DiningProps;
+  location: LocationProps;
+  gallery: GalleryProps;
+  faqs: FaqsProps;
+  contact: ContactProps;
+}
+
+export const landingPageData: LandingPageDataProps = {
   offer: [
     "Direct Booking Offer: Save 15% + Free Breakfast",
   ],
   hero: {
     logo: "/dd/Logo.png",
     tag: "DESTINN DHELA RETREAT BY JUNGLE DIARIES · JIM CORBETT",
-    title: "Your Complete<br class=\"block sm:hidden\" /><span class=\"italic font-fraunces font-bold\">Corbett</span><br class=\"hidden sm:block\" /> Getaway",
+    title: "Your Complete <br class=\"block sm:hidden\" /><span class=\"italic font-fraunces font-bold\">Corbett</span><br class=\"hidden sm:block\" /> Getaway",
     description: "Green mornings, safari days, rooftop swims and star filled nights at a<br class=\"hidden sm:inline\" /> comfortable retreat made for time together.",
     benefits: "Save 15% when you book direct · Free cancellation on most dates*",
     images: ["/dd/banner.png", "/dd/banner.png", "/dd/banner.png"],
@@ -161,14 +284,14 @@ export const landingPageData = {
       },
       {
         q: "How Do I Confirm A Booking?",
-        a: "You can book direct through the form on this page or connect with our team on WhatsApp/Phone at +91 XXXXX XXXXX to receive immediate confirmation and 15% off.",
+        a: "You can book direct through the form on this page or connect with our team on WhatsApp/Phone at ${contact.phone[0]} to receive immediate confirmation and 15% off.",
       },
     ],
   },
   contact: {
     location: "lorem ipsum dolor , Ramnagar, Jim Corbett, Uttarakhand",
-    phone: "+91 XXXXX XXXXX",
-    email: "demo@gmail.com",
-    copyright: "© 2026 DESTINN DHELA. All rights reserved. Powered by Fielmente",
+    phone: contact.phone[0],
+    email: contact.email,
+    copyright: "© Destinn Dhela Retreat by Jungle Diaries · A Unit of Devine Wild Bloom Resort LLP",
   },
 };

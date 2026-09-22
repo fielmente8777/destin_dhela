@@ -59,13 +59,13 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
               className="object-cover object-center"
             />
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/40" />
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/40" /> */}
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* Hero Content */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center lg:justify-start text-center pt-10 sm:pt-14 lg:pt-[281px] pb-6 sm:pb-8 lg:pb-0 pointer-events-none px-3 sm:px-0">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center lg:justify-start text-center pt-10 sm:pt-14 lg:pt-[281px] pb-6 sm:pb-8 lg:pb-0 pointer-events-auto select-text px-3 sm:px-0">
         <Container className="w-full flex flex-col items-center justify-center text-center">
           <div className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
             {/* Badge */}
@@ -75,13 +75,13 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
 
             {/* Heading */}
             <h1
-              className="mt-[12px] w-full font-fraunces font-bold text-3xl sm:text-5xl lg:text-[56px] leading-tight sm:leading-tight lg:leading-[64px] tracking-[0px] text-white text-center drop-shadow-md"
+              className="mt-[12px] w-full font-fraunces font-bold text-3xl sm:text-5xl lg:text-[56px] leading-tight sm:leading-tight lg:leading-[64px] text-white text-center drop-shadow-md"
               dangerouslySetInnerHTML={{ __html: hero.title }}
             />
 
             {/* Description */}
             <p
-              className="mt-[12px] w-full font-dm-sans font-normal text-[13.5px] min-[375px]:text-[14px] min-[400px]:text-[15px] sm:text-[18px] leading-[22px] sm:leading-[26px] tracking-[0px] text-white text-center max-w-2xl mx-auto drop-shadow-sm px-2 sm:px-0"
+              className="mt-[12px] w-full font-dm-sans font-normal text-[13.5px] min-[375px]:text-[14px] min-[400px]:text-[15px] sm:text-[18px] leading-[22px] sm:leading-[26px] text-white text-center max-w-2xl mx-auto drop-shadow-sm px-2 sm:px-0"
               dangerouslySetInnerHTML={{ __html: hero.description }}
             />
           </div>

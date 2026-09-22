@@ -2,13 +2,15 @@
 
 import React from "react";
 import Image from "next/image";
-import { landingPageData } from "./pagedata";
+import { StargazingBannerProps } from "./pagedata";
 import { MoonIcon } from "@/src/utils/icons";
 import { Container, Section } from "@/src/components/sectionComponants";
 
-export const StargazingBanner: React.FC = () => {
-  const data = landingPageData.stargazingBanner;
+interface Props {
+  data: StargazingBannerProps;
+}
 
+export const StargazingBanner: React.FC<Props> = ({ data }) => {
   return (
     <Section
       id="stargazing-banner"
@@ -46,13 +48,13 @@ export const StargazingBanner: React.FC = () => {
 
           {/* Heading */}
           <h2
-            className="mt-[4px] heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-[#FCFAF6] leading-tight lg:leading-[48px] tracking-[0px]"
+            className="mt-[4px] heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-[#FCFAF6] leading-tight lg:leading-[48px]"
             dangerouslySetInnerHTML={{ __html: data.heading }}
           />
 
           {/* Description */}
           <p
-            className="mt-[34px] text-sm sm:text-[16px] leading-[24px] tracking-[0px] text-[#E2DDD4] font-dm-sans font-normal"
+            className="mt-[34px] text-sm sm:text-[16px] leading-[24px] text-[#E2DDD4] font-dm-sans font-normal"
             dangerouslySetInnerHTML={{ __html: data.description }}
           />
         </div>

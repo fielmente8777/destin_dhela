@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { landingPageData } from "./pagedata";
+import { GalleryProps } from "./pagedata";
 import { Section } from "@/src/components/sectionComponants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -12,9 +12,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-export const Gallery: React.FC = () => {
+interface Props {
+  data: GalleryProps;
+}
+
+export const Gallery: React.FC<Props> = ({ data }) => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
-  const images = landingPageData.gallery.images;
+  const images = data.images;
 
   return (
     <Section sectionClassName="overflow-hidden" defaultPadding={false}>

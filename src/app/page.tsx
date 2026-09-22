@@ -1,7 +1,7 @@
 import ImageB from "../components/banners/Image";
 import SlidingTitle from "../components/sliders/SlidingTitle";
 import Form1 from "../components/forms/Form1";
-import { Container, Section, SectionWithContainer } from "../components/sectionComponants";
+import { SectionWithContainer } from "../components/sectionComponants";
 import { landingPageData } from "./(landing-page)/components/pagedata";
 import { About } from "./(landing-page)/components/About";
 import { Room } from "./(landing-page)/components/Room";
@@ -11,7 +11,7 @@ import { Dining } from "./(landing-page)/components/Dining";
 import { Location } from "./(landing-page)/components/Location";
 import { Gallery } from "./(landing-page)/components/Gallery";
 import { Faqs } from "./(landing-page)/components/Faqs";
-import { LandingFooter } from "./(landing-page)/components/LandingFooter";
+import LandingFooter from "../components/footer/LandingFooter";
 
 export default function LandingPage() {
   return (
@@ -33,40 +33,40 @@ export default function LandingPage() {
             <Form1 />
           </div>
           <p
-            className="font-open-sans font-normal text-[14px] leading-[16px] tracking-[0px] text-white text-center max-w-3xl mx-auto"
+            className="font-open-sans font-normal text-[14px] leading-[16px] text-white text-center max-w-3xl mx-auto"
             dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
           />
         </SectionWithContainer>
 
         {/* About */}
-        <About />
+        <About data={landingPageData.about} />
 
         {/* Sliding Title */}
         <SlidingTitle items={landingPageData.step} />
 
         {/* Accommodation */}
-        <Room />
+        <Room data={landingPageData.accommodation} />
 
         {/* Safari & Stargazing */}
-        <SafariStargazing />
+        <SafariStargazing data={landingPageData.safariStargazing} />
 
         {/* Stargazing Banner */}
-        <StargazingBanner />
+        <StargazingBanner data={landingPageData.stargazingBanner} />
 
         {/* Dining */}
-        <Dining />
+        <Dining data={landingPageData.dining} />
 
         {/* Location */}
-        <Location />
+        <Location data={landingPageData.location} />
 
         {/* Gallery */}
-        <Gallery />
+        <Gallery data={landingPageData.gallery} />
 
         {/* FAQs */}
-        <Faqs />
+        <Faqs data={landingPageData.faqs} />
 
         {/* Footer */}
-        <LandingFooter />
+        <LandingFooter data={landingPageData.contact} heroLogo={landingPageData.hero.logo} />
       </main>
     </div>
   );

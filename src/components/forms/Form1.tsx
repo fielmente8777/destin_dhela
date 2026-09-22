@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import useBookingForm from "@/src/hooks/useBookingForm";
 import { getDateInputLimits } from "@/src/hooks/getDateInputLimits";
 import { countries } from "@/src/utils/constent";
+import { IoIosArrowDown } from "react-icons/io";
 import {
   CalendarIcon,
   CallIcon,
@@ -67,7 +68,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
         gridView
           ? "flex-col gap-3.5 w-full"
           : "flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-4 sm:gap-y-3 w-full"
-      } font-open-sans font-normal text-[14px] leading-[20px] tracking-normal bg-transparent`}
+      } font-open-sans font-normal text-[14px] leading-[20px] bg-transparent`}
     >
       {/* Name */}
       <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
@@ -81,11 +82,11 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
             placeholder="Full Name"
             value={formData.name}
             onChange={handleChange}
-            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] tracking-[0px] w-full"
+            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] w-full"
           />
         </div>
         {errors.name && (
-          <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] tracking-normal whitespace-nowrap">
+          <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] whitespace-nowrap">
             {errors.name}
           </span>
         )}
@@ -97,33 +98,37 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
           <label className="text-[#777777] text-sm shrink-0 flex items-center justify-center">
             <CallIcon />
           </label>
-          <select
-            name="countryCode"
-            value={formData.countryCode}
-            onChange={handleChange}
-            className="bg-transparent outline-none text-[#777777] font-open-sans font-normal text-[14px] leading-[20px] cursor-pointer shrink-0 max-w-[65px]"
-          >
-            {countries.map((country, index) => (
-              <option
-                key={`${country.name}-${country.code}-${index}`}
-                value={country.code}
-                className="bg-white text-gray-900"
-              >
-                {country.code}
-              </option>
-            ))}
-          </select>
+          <div className="relative flex items-center shrink-0">
+            <select
+              name="countryCode"
+              value={formData.countryCode}
+              onChange={handleChange}
+              style={{ width: `${formData.countryCode.length + 2.2}ch` }}
+              className="cursor-pointer appearance-none bg-transparent outline-none text-[#777777] font-open-sans font-normal text-[14px] leading-[20px] pr-3.5"
+            >
+              {countries.map((country, index) => (
+                <option
+                  key={`${country.name}-${country.code}-${index}`}
+                  value={country.code}
+                  className="bg-white text-gray-900"
+                >
+                  {country.code}
+                </option>
+              ))}
+            </select>
+            <IoIosArrowDown className="absolute right-0 text-[10px] pointer-events-none text-[#777777]" />
+          </div>
           <input
             type="tel"
             name="phone"
             placeholder="Ph Number"
             value={formData.phone}
             onChange={handleChange}
-            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] tracking-[0px] w-full"
+            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] w-full"
           />
         </div>
         {errors.phone && (
-          <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] tracking-normal whitespace-nowrap">
+          <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] whitespace-nowrap">
             {errors.phone}
           </span>
         )}
@@ -141,11 +146,11 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
             placeholder="Email ID"
             value={formData.email}
             onChange={handleChange}
-            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] tracking-[0px] w-full"
+            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] w-full"
           />
         </div>
         {errors.email && (
-          <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] tracking-normal whitespace-nowrap">
+          <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] whitespace-nowrap">
             {errors.email}
           </span>
         )}
@@ -164,7 +169,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
             onChange={handleDateChange}
             placeholderText="Check-in & out"
             wrapperClassName="w-full flex-1 flex items-center"
-            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] tracking-[0px] w-full text-left cursor-pointer"
+            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] w-full text-left cursor-pointer"
             minDate={min ? new Date(min) : new Date()}
             maxDate={max ? new Date(max) : undefined}
             dateFormat="dd MMM yyyy"
@@ -173,7 +178,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
           />
         </div>
         {(errors.checkIn || errors.checkOut) && (
-          <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] tracking-normal whitespace-nowrap">
+          <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] whitespace-nowrap">
             {errors.checkIn || errors.checkOut}
           </span>
         )}
@@ -184,7 +189,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`bg-[#614B33] hover:bg-[#523F2B] text-white ${gridView ? "w-full" : "w-full sm:w-[180px]"} h-[36px] px-[16px] py-[8px] rounded-[4px] font-open-sans font-normal text-[14px] leading-[20px] tracking-[0px] uppercase flex items-center justify-center text-center gap-[8px] transition-all shadow-md cursor-pointer active:scale-95 disabled:opacity-75 whitespace-nowrap shrink-0`}
+          className={`bg-tertiary hover:bg-[#523F2B] text-white ${gridView ? "w-full" : "w-full sm:w-[180px]"} h-[36px] px-[16px] py-[8px] rounded-[4px] font-open-sans font-normal text-[14px] leading-[20px] uppercase flex items-center justify-center text-center gap-[8px] transition-all shadow-md cursor-pointer active:scale-95 disabled:opacity-75 whitespace-nowrap shrink-0`}
         >
           <BookingCalenderIcon /> {isSubmitting ? "Submitting..." : "Book Now"}
         </button>

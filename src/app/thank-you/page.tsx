@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { landingPageData } from "../(landing-page)/components/pagedata";
+import { contact } from "@/src/utils/constent";
 
 export const metadata = {
   title: "Thank You | Destinn Dhela - Jim Corbett",
@@ -54,10 +55,10 @@ export default function ThankYouPage() {
             Return to Homepage
           </Link>
           <Link
-            href="tel:+91XXXXXXXXXX"
+            href={contact.callCta}
             className="px-8 py-3 rounded-lg border border-[#30402A] text-[#30402A] hover:bg-[#30402A] hover:text-white transition-colors font-open-sans text-[15px] font-medium"
           >
-            Call Us: +91 XXXXX XXXXX
+            Call Us: {contact.phone[0]}
           </Link>
         </div>
       </div>

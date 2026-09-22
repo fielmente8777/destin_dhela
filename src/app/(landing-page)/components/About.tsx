@@ -1,13 +1,17 @@
 import React from "react";
-import { landingPageData } from "./pagedata";
+import { AboutProps } from "./pagedata";
 import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
 
-export const About: React.FC = () => {
+interface Props {
+  data: AboutProps;
+}
+
+export const About: React.FC<Props> = ({ data }) => {
   return (
     <SectionWithContainer
       sectionId="about"
-      sectionClassName="bg-[#F5F5EB] border-b border-sand-border"
+      sectionClassName="bg-bg-sand border-b border-sand-border"
       defaultPadding={false}
       containerClassName="pt-12 sm:pt-16 md:pt-[111px] pb-12 sm:pb-16 md:pb-24"
     >
@@ -15,37 +19,37 @@ export const About: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-20 items-center">
         {/* Tag & Title */}
         <div className="space-y-3 sm:space-y-4 text-left">
-          <p className="text-[16px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
-            {landingPageData.about.tag}
+          <p className="text-[16px] tracking-[2.3px] uppercase text-tertiary font-normal font-dm-sans">
+            {data.tag}
           </p>
 
           <h2
-            className="heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-[#607839] leading-tight"
-            dangerouslySetInnerHTML={{ __html: landingPageData.about.heading }}
+            className="heading-h2 font-varela font-normal capitalize text-2xl sm:text-4xl lg:text-[40px] text-primary leading-tight"
+            dangerouslySetInnerHTML={{ __html: data.heading }}
           />
         </div>
 
         {/* Description */}
-        <div className="text-[#5E5E5E] text-base md:text-[18px] leading-[26px] font-dm-sans font-normal text-left">
-          <p>{landingPageData.about.description}</p>
+        <div className="text-body-light text-base md:text-[18px] leading-[26px] font-dm-sans font-normal text-left">
+          <p>{data.description}</p>
         </div>
       </div>
 
       {/* Feature Cards */}
       <div className="w-full mx-auto bg-background shadow-xs lg:divide-x divide-secondary overflow-hidden flex flex-col md:flex-row items-stretch max-lg:divide-y mt-8 sm:mt-12 lg:mt-[91px]">
-        {landingPageData.about.featureCards.map((card, idx) => (
+        {data.featureCards.map((card, idx) => (
           <div
             key={idx}
-            className="flex-1 w-full pt-[36px] pb-[40px] px-6 sm:px-8 md:px-[43px] flex flex-col bg-[#FEFDFA]"
+            className="flex-1 w-full pt-[36px] pb-[40px] px-6 sm:px-8 md:px-[43px] flex flex-col bg-bg-card"
           >
             {/* Icon */}
             <div>{card.icon}</div>
 
             {/* Title & Description */}
-            <h3 className="mt-[32px] font-varela font-normal capitalize text-lg sm:text-[24px] leading-[32px] tracking-[0px] text-[#614B33]">
+            <h3 className="mt-[32px] font-varela font-normal capitalize text-lg sm:text-[24px] leading-[32px] text-tertiary">
               {card.title}
             </h3>
-            <p className="mt-[16px] text-[#5E5E5E] text-[14px] leading-[20px] font-dm-sans font-normal">
+            <p className="mt-[16px] text-body-light text-[14px] leading-[20px] font-dm-sans font-normal">
               {card.description}
             </p>
           </div>

@@ -23,7 +23,7 @@ const LandingNavbar = () => {
         {/* Logo */}
         <Link
           href="/"
-          className="w-[115px] h-[60px] sm:w-[152px] sm:h-[80px] bg-white rounded-[8px] p-2 sm:p-3 shadow-md flex items-center justify-center border border-white/60 hover:shadow-lg transition-shadow shrink-0"
+          className="w-[115px] h-[60px] sm:w-[152px] sm:h-[80px] bg-white rounded-[8px] p-0 shadow-md flex items-center justify-center border border-white/60 hover:shadow-lg transition-shadow shrink-0 overflow-hidden"
         >
           <div className="relative w-full h-full flex items-center justify-center">
             <Image
@@ -44,9 +44,9 @@ const LandingNavbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Enquire on WhatsApp"
-            className="w-[44px] sm:w-[160px] h-[44px] p-0 sm:px-[16px] sm:py-[12px] rounded-[4px] bg-white border border-[#4F5E33]/40 text-[#4F5E33] hover:bg-gray-50 transition-all text-[14px] leading-[20px] tracking-[0px] uppercase font-open-sans font-normal shadow-sm flex items-center justify-center sm:gap-[8px] shrink-0 cursor-pointer"
+            className="w-[44px] sm:w-[160px] h-[44px] p-0 sm:px-[16px] sm:py-[12px] rounded-[4px] bg-white border border-primary/40 text-primary hover:bg-gray-50 transition-all text-[14px] leading-[20px] uppercase font-open-sans font-normal shadow-sm flex items-center justify-center sm:gap-[8px] shrink-0 cursor-pointer"
           >
-            <WhatsAppIcon className="w-[24px] h-[24px] sm:w-4 sm:h-4 text-[#4F5E33] shrink-0" />
+            <WhatsAppIcon className="w-[24px] h-[24px] sm:w-4 sm:h-4 text-primary shrink-0" />
             <span className="hidden sm:inline whitespace-nowrap">Enquire Now</span>
           </Link>
 
@@ -55,7 +55,7 @@ const LandingNavbar = () => {
             type="button"
             onClick={() => setIsOpenFormPopUp(true)}
             aria-label="Book Now"
-            className="w-[44px] sm:w-[160px] h-[44px] p-0 sm:px-[16px] sm:py-[12px] rounded-[4px] bg-[#4F5E33] hover:bg-[#3E4C26] text-white border border-[#4F5E33] transition-all text-[14px] leading-[20px] tracking-[0px] uppercase font-open-sans font-normal shadow-sm flex items-center justify-center sm:gap-[8px] shrink-0 cursor-pointer"
+            className="w-[44px] sm:w-[160px] h-[44px] p-0 sm:px-[16px] sm:py-[12px] rounded-[4px] bg-primary hover:bg-[#4d602e] text-white border border-primary transition-all text-[14px] leading-[20px] uppercase font-open-sans font-normal shadow-sm flex items-center justify-center sm:gap-[8px] shrink-0 cursor-pointer"
           >
             <BookNowIcon className="w-[20px] h-[20px] sm:w-3.5 sm:h-3.5 text-white shrink-0" />
             <span className="hidden sm:inline whitespace-nowrap">Book Now</span>

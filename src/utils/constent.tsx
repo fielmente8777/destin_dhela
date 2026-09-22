@@ -8,10 +8,12 @@ Thank you!`);
 
 export const contact = {
   email: "demo@gmail.com",
-  mapUrl: "",
+  mapUrl:
+    "https://maps.google.com/maps?q=Destinn+Dhela+Retreat+Dhela+Road+Ramnagar+Jim+Corbett+Uttarakhand&t=&z=14&ie=UTF8&iwloc=&output=embed",
   phone: ["+91 XXXXX XXXXX"],
-  address: "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
-  addressLink: "",
+  address: "lorem ipsum dolor , Ramnagar, Jim Corbett, Uttarakhand",
+  addressLink:
+    "https://maps.google.com/?q=Destinn+Dhela+Retreat+Dhela+Road+Ramnagar+Jim+Corbett+Uttarakhand",
   socialMedia: {
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com/",

@@ -35,7 +35,7 @@ export default function SlidingTitle({
   return (
     <Section
       defaultPadding={false}
-      sectionClassName="relative overflow-hidden border-y border-[#614B33] bg-[#FDF9EE] py-[13px] text-[#607839] w-full font-dm-sans text-[16px] leading-[24px] font-normal tracking-[0px]"
+      sectionClassName="relative overflow-hidden border-y border-tertiary bg-bg-main py-[13px] text-primary w-full font-dm-sans text-[16px] leading-[24px] font-normal"
       {...({ "aria-hidden": ariaHidden } as any)}
     >
       <div className="marquee-wrapper">
