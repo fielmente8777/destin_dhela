@@ -49,7 +49,7 @@ const initialFormData: BookingFormData = {
 };
 
 export const useBookingForm = ({
-  formDomain = contact.formDomain || "Destin DeLa",
+  formDomain = contact.formDomain || "Destinn Dhela",
   formHid = contact.formHid || "",
   thankYouUrl = "/thank-you/",
   includeCheckIn = true,

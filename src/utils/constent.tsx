@@ -1,24 +1,24 @@
 export const enCodeText = encodeURIComponent(`Hi,
 
-I'm interested in booking a stay at Destin DeLa.
+I'm interested in booking a stay at Destinn Dhela.
 
 Please share the best available options and rates.
 
 Thank you!`);
 
 export const contact = {
-  email: "destindhela@gmail.com",
+  email: "demo@gmail.com",
   mapUrl: "",
-  phone: ["+918868888494"],
+  phone: ["+91 XXXXX XXXXX"],
   address: "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
   addressLink: "",
   socialMedia: {
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com/",
   },
-  callCta: `tel:+918868888494`,
-  WhatsappCta: `https://wa.me/+918868888494?text=${enCodeText}`,
-  formDomain: "Destin DeLa",
+  callCta: `tel:+91XXXXXXXXXX`,
+  WhatsappCta: `https://wa.me/+91XXXXXXXXXX?text=${enCodeText}`,
+  formDomain: "Destinn Dhela",
   formHid: "",
 };
 

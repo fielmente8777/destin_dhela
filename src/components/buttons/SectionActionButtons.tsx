@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
 import { contact } from "@/src/utils/constent";
 import { useWebContext } from "@/src/context-api/WebContext";
@@ -21,7 +22,7 @@ export const SectionActionButtons: React.FC<SectionActionButtonsProps> = ({
   return (
     <div className={`flex flex-row items-center justify-center lg:justify-start gap-[12px] font-open-sans ${className}`}>
       {/* Enquire Now */}
-      <a
+      <Link
         href={contact.WhatsappCta}
         target="_blank"
         rel="noopener noreferrer"
@@ -29,7 +30,7 @@ export const SectionActionButtons: React.FC<SectionActionButtonsProps> = ({
       >
         <WhatsAppIcon className="w-4 h-4 text-[#4F5E33] shrink-0" />
         <span>Enquire Now</span>
-      </a>
+      </Link>
 
       {/* Book Now */}
       <button

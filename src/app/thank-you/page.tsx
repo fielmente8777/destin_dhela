@@ -3,8 +3,8 @@ import Image from "next/image";
 import { landingPageData } from "../(landing-page)/components/pagedata";
 
 export const metadata = {
-  title: "Thank You | Destin DeLa - Jim Corbett",
-  description: "Thank you for reaching out to Destin DeLa. We will get back to you shortly.",
+  title: "Thank You | Destinn Dhela - Jim Corbett",
+  description: "Thank you for reaching out to Destinn Dhela. We will get back to you shortly.",
 };
 
 export default function ThankYouPage() {
@@ -14,7 +14,7 @@ export default function ThankYouPage() {
         <div className="relative w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] mb-6">
           <Image
             src={landingPageData.hero.logo || "/logo-image1.png"}
-            alt="Destin DeLa Logo"
+            alt="Destinn Dhela Logo"
             fill
             className="object-contain"
             priority
@@ -35,7 +35,7 @@ export default function ThankYouPage() {
         </div>
 
         <p className="text-[14px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans mb-3">
-          DESTIN DELA · JIM CORBETT
+          DESTINN DHELA · JIM CORBETT
         </p>
 
         <h1 className="font-fraunces text-3xl sm:text-4xl md:text-5xl text-[#30402A] mb-4">
@@ -53,17 +53,17 @@ export default function ThankYouPage() {
           >
             Return to Homepage
           </Link>
-          <a
-            href="tel:+918868888494"
+          <Link
+            href="tel:+91XXXXXXXXXX"
             className="px-8 py-3 rounded-lg border border-[#30402A] text-[#30402A] hover:bg-[#30402A] hover:text-white transition-colors font-open-sans text-[15px] font-medium"
           >
-            Call Us: +91 88688 88494
-          </a>
+            Call Us: +91 XXXXX XXXXX
+          </Link>
         </div>
       </div>
 
       <footer className="w-full text-center text-[13px] text-[#6B635E] font-dm-sans mt-8">
-        <p>© 2026 DESTIN DELA. All rights reserved.</p>
+        <p>© 2026 DESTINN DHELA. All rights reserved.</p>
       </footer>
     </div>
   );

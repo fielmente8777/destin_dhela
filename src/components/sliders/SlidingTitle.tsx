@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import "./sliding.title.scss";
-import { MarqueeCheckIcon } from "@/src/utils/icons";
+import { Section } from "@/src/components/sectionComponants";
 
 interface SlidingTitleItem {
   title: string;
@@ -33,9 +33,10 @@ export default function SlidingTitle({
   const titles = [...items, ...items, ...items, ...items];
 
   return (
-    <div
-      className="relative overflow-hidden border-y border-[#614B33] bg-[#FDF9EE] py-[13px] text-[#607839] w-full font-dm-sans text-[16px] leading-[24px] font-normal tracking-[0px]"
-      aria-hidden={ariaHidden}
+    <Section
+      defaultPadding={false}
+      sectionClassName="relative overflow-hidden border-y border-[#614B33] bg-[#FDF9EE] py-[13px] text-[#607839] w-full font-dm-sans text-[16px] leading-[24px] font-normal tracking-[0px]"
+      {...({ "aria-hidden": ariaHidden } as any)}
     >
       <div className="marquee-wrapper">
         <div className="marquee-track flex items-center">
@@ -47,6 +48,6 @@ export default function SlidingTitle({
           ))}
         </div>
       </div>
-    </div>
+    </Section>
   );
 }

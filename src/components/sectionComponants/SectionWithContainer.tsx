@@ -1,7 +1,6 @@
+import React from "react";
 import Container from "./Container";
 import Section from "./Section";
-
-import React from "react";
 
 interface SectionWithContainerProps {
   sectionId?: string;
@@ -31,7 +30,7 @@ const SectionWithContainer: React.FC<SectionWithContainerProps> = ({
   return (
     <Section
       id={sectionId}
-      className={sectionClassName}
+      sectionClassName={sectionClassName}
       style={sectionStyle}
       defaultPadding={defaultPadding}
       {...sectionProps}

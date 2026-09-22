@@ -57,7 +57,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Destin DeLa | Jim Corbett",
+  title: "Destinn Dhela | Jim Corbett",
   description:
     "Leave the city behind. Let the forest set the pace. A boutique luxury escape on Dhela Road, Jim Corbett.",
 };
@@ -72,7 +72,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${varelaRound.variable} ${inter.variable} ${dmSans.variable} ${openSans.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#FDF9EE] text-[#5F6764]">
+      <body className="min-h-full flex flex-col font-sans text-[#5F6764]">
         <LandingNavbar />
         <WebProvider>
           {children}

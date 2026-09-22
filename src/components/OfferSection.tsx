@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { landingPageData } from "../app/(landing-page)/components/pagedata";
+import { Container } from "@/src/components/sectionComponants";
 
 const OfferSection = () => {
   const pathName = usePathname();
@@ -30,11 +31,11 @@ const OfferSection = () => {
           : "relative w-full"
         }`}
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-[100px] text-center">
+      <Container className="text-center">
         <p className="text-center text-white text-xs md:text-sm font-sans tracking-wide">
           {landingPageData.offer[0]}
         </p>
-      </div>
+      </Container>
     </div>
   );
 };

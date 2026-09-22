@@ -1,7 +1,7 @@
 import ImageB from "../components/banners/Image";
 import SlidingTitle from "../components/sliders/SlidingTitle";
 import Form1 from "../components/forms/Form1";
-import { SectionWithContainer } from "../components/sectionComponants";
+import { Container, Section, SectionWithContainer } from "../components/sectionComponants";
 import { landingPageData } from "./(landing-page)/components/pagedata";
 import { About } from "./(landing-page)/components/About";
 import { Room } from "./(landing-page)/components/Room";
@@ -15,8 +15,8 @@ import { LandingFooter } from "./(landing-page)/components/LandingFooter";
 
 export default function LandingPage() {
   return (
-    <div className="w-full bg-[#FDF9EE] min-h-screen flex justify-center">
-      <main className="min-h-screen bg-[#FDF9EE] text-[#192118] font-sans flex flex-col w-full mx-auto overflow-x-hidden">
+    <div className="w-full min-h-screen flex justify-center">
+      <main className="min-h-screen text-[#192118] font-sans flex flex-col w-full mx-auto overflow-x-hidden">
         {/* Hero Banner */}
         <ImageB hero={landingPageData.hero} />
 
@@ -24,15 +24,19 @@ export default function LandingPage() {
         <SlidingTitle items={landingPageData.step} />
 
         {/* Booking Form */}
-        <div className="w-full bg-[#607839] pt-[24px] pb-[24px] px-4 sm:px-8 lg:px-[100px] flex flex-col justify-center items-center gap-[20px]">
-          <div id="form" className="w-full max-w-7xl mx-auto flex justify-center">
+        <SectionWithContainer
+          defaultPadding={false}
+          sectionClassName="bg-[#607839] border-t border-[#607839]"
+          containerClassName="pt-[24px] pb-[24px] flex flex-col justify-center items-center gap-[20px]"
+        >
+          <div id="form" className="w-full flex justify-center">
             <Form1 />
           </div>
           <p
             className="font-open-sans font-normal text-[14px] leading-[16px] tracking-[0px] text-white text-center max-w-3xl mx-auto"
             dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
           />
-        </div>
+        </SectionWithContainer>
 
         {/* About */}
         <About />

@@ -1,0 +1,230 @@
+@layer utilities {
+  a,
+  button {
+    cursor: pointer;
+  }
+  .demo {
+    .swiper {
+      pointer-events: none;
+    }
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+  }
+
+  .box-shadow {
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+  }
+
+  .md-box-shadow {
+    @media (min-width: 768px) {
+      box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    }
+  }
+
+  // container sizes
+
+  .max_screen_width {
+    max-width: 1600px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .max_width {
+    max-width: 100%;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+
+    @media (min-width: 768px) {
+      /* md */
+      max-width: 720px;
+    }
+
+    @media (min-width: 1024px) {
+      /* lg */
+      max-width: 960px;
+    }
+
+    @media (min-width: 1280px) {
+      /* xl */
+      max-width: 1250px;
+    }
+
+    @media (min-width: 1536px) {
+      /* 2xl */
+      max-width: 1320px;
+      padding-inline: 0;
+    }
+
+    @media (min-width: 1920px) {
+      /* 3xl */
+      max-width: 1440px;
+      padding-inline: 0;
+    }
+  }
+
+  // mobile desktop and across all devices
+
+  .hide-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+
+
+.room-card {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      color: #ef6c22;
+      width: 20px;
+      height: 20px;
+    }
+    @media (width < 768px) {
+      width: 32px;
+      height: 32px;
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+.nav {
+  a {
+    .span-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--primary);
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+      .span-border {
+        width: 100%;
+      }
+    }
+  }
+
+  .nav-1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    text-wrap: wrap;
+    transition: max-height 0.2s ease-in-out;
+    z-index: 99999;
+    width: max-content; // max content width and padding
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    > * {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    a {
+      padding: 0.5rem 1rem;
+      color: #333;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: var(--secondary);
+        // color: var(--primary);
+      }
+    }
+  }
+
+  &:hover .nav-1 {
+    max-height: 500px;
+    overflow: visible;
+    visibility: visible;
+
+    > * {
+      opacity: 1;
+      transition-delay: 0s;
+    }
+  }
+
+  &:hover {
+    .span-border {
+      width: 100%;
+    }
+
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.nav-2 {
+  .nav-link {
+    position: absolute;
+    top: 0;
+    left: 100.12%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.7s ease-in-out;
+    z-index: 99999;
+
+    > * {
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+    }
+
+    a {
+      padding: 0.5rem 1rem;
+      color: #333;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+    }
+  }
+
+  &:hover .nav-link {
+    max-width: 500px;
+
+    > * {
+      opacity: 1;
+      transition-delay: 0.2s;
+    }
+  }
+
+  &:hover .nav-1 {
+    overflow: visible;
+  }
+}

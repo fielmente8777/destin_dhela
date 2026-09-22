@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { BannerDotIcon } from "@/src/utils/icons";
+import { Container, Section } from "@/src/components/sectionComponants";
 import "swiper/css";
 import "swiper/css/autoplay";
 
@@ -23,10 +24,16 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const images = hero.images && hero.images.length > 0 ? hero.images : ["/dd/banner.png", "/dd/banner.png", "/dd/banner.png"];
+  const images =
+    hero.images && hero.images.length > 0
+      ? hero.images
+      : ["/dd/banner.png", "/dd/banner.png", "/dd/banner.png"];
 
   return (
-    <section className="relative w-full h-[650px] sm:h-[720px] lg:h-[800px] overflow-hidden">
+    <Section
+      defaultPadding={false}
+      sectionClassName="relative w-full h-[650px] sm:h-[720px] lg:h-[800px] overflow-hidden"
+    >
       {/* Background Swiper */}
       <Swiper
         modules={[Autoplay]}
@@ -58,24 +65,27 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
       </Swiper>
 
       {/* Hero Content */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center lg:justify-start px-4 sm:px-8 lg:px-[100px] text-center pt-10 sm:pt-14 lg:pt-[281px] pb-6 sm:pb-8 lg:pb-0 pointer-events-none">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
-          {/* Badge */}
-          <div className="inline-flex items-center justify-center w-auto max-w-[92vw] sm:w-full sm:max-w-[500px] h-[34px] px-3.5 sm:px-4 bg-[#FFFFFF1A] backdrop-blur-[12px] border border-[#FFFFFF33] rounded-full text-[11px] sm:text-[12px] leading-[15px] font-dm-sans font-semibold uppercase tracking-[1.5px] sm:tracking-[2.3px] text-white">
-            {hero.tag}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center lg:justify-start text-center pt-10 sm:pt-14 lg:pt-[281px] pb-6 sm:pb-8 lg:pb-0 pointer-events-none px-3 sm:px-0">
+        <Container className="w-full flex flex-col items-center justify-center text-center">
+          <div className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center justify-center text-center w-fit mx-auto h-[28px] sm:h-[34px] px-2.5 sm:px-4 bg-[#FFFFFF1A] backdrop-blur-[12px] border border-[#FFFFFF33] rounded-full text-[8px] min-[360px]:text-[8.5px] min-[390px]:text-[9px] min-[425px]:text-[10px] sm:text-[12px] leading-none font-dm-sans font-semibold uppercase tracking-[0.2px] min-[360px]:tracking-[0.4px] min-[390px]:tracking-[0.6px] sm:tracking-[2px] text-white whitespace-nowrap shadow-sm">
+              <span className="text-center">{hero.tag}</span>
+            </div>
+
+            {/* Heading */}
+            <h1
+              className="mt-[12px] w-full font-fraunces font-bold text-3xl sm:text-5xl lg:text-[56px] leading-tight sm:leading-tight lg:leading-[64px] tracking-[0px] text-white text-center drop-shadow-md"
+              dangerouslySetInnerHTML={{ __html: hero.title }}
+            />
+
+            {/* Description */}
+            <p
+              className="mt-[12px] w-full font-dm-sans font-normal text-[13.5px] min-[375px]:text-[14px] min-[400px]:text-[15px] sm:text-[18px] leading-[22px] sm:leading-[26px] tracking-[0px] text-white text-center max-w-2xl mx-auto drop-shadow-sm px-2 sm:px-0"
+              dangerouslySetInnerHTML={{ __html: hero.description }}
+            />
           </div>
-
-          {/* Heading */}
-          <h1
-            className="mt-[12px] font-fraunces font-bold text-3xl sm:text-5xl lg:text-[56px] leading-tight sm:leading-tight lg:leading-[64px] tracking-[0px] text-white text-center drop-shadow-md"
-            dangerouslySetInnerHTML={{ __html: hero.title }}
-          />
-
-          {/* Description */}
-          <p className="mt-[12px] font-dm-sans font-normal text-[16px] sm:text-[18px] leading-[24px] sm:leading-[26px] tracking-[0px] text-white text-center max-w-2xl mx-auto drop-shadow-sm">
-            {hero.description}
-          </p>
-        </div>
+        </Container>
       </div>
 
       {/* Pagination Dots */}
@@ -101,7 +111,7 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
           </button>
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

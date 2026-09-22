@@ -1,3 +1,5 @@
+import React from "react";
+
 interface ContainerProps {
   className?: string;
   children: React.ReactNode;
@@ -13,12 +15,7 @@ const Container: React.FC<ContainerProps> = ({
   ...props
 }) => {
   return (
-    <div
-      className={`w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-[100px] ${className}`}
-      id={id}
-      style={style}
-      {...props}
-    >
+    <div className={`max_width ${className}`} id={id} style={style} {...props}>
       {children}
     </div>
   );

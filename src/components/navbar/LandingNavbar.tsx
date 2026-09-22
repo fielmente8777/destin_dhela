@@ -7,6 +7,7 @@ import { landingPageData } from "../../app/(landing-page)/components/pagedata";
 import { contact } from "@/src/utils/constent";
 import { WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
 import { useWebContext } from "@/src/context-api/WebContext";
+import { Container } from "@/src/components/sectionComponants";
 
 const LandingNavbar = () => {
   const pathName = usePathname();
@@ -18,7 +19,7 @@ const LandingNavbar = () => {
 
   return (
     <header className="absolute top-[15px] left-0 right-0 z-40 w-full bg-transparent">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[100px] flex items-center justify-between">
+      <Container className="flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
@@ -38,7 +39,7 @@ const LandingNavbar = () => {
         {/* Action Buttons */}
         <div className="flex items-center gap-[8px] sm:gap-[12px]">
           {/* Enquire Now */}
-          <a
+          <Link
             href={contact.WhatsappCta}
             target="_blank"
             rel="noopener noreferrer"
@@ -47,7 +48,7 @@ const LandingNavbar = () => {
           >
             <WhatsAppIcon className="w-[24px] h-[24px] sm:w-4 sm:h-4 text-[#4F5E33] shrink-0" />
             <span className="hidden sm:inline whitespace-nowrap">Enquire Now</span>
-          </a>
+          </Link>
 
           {/* Book Now */}
           <button
@@ -60,7 +61,7 @@ const LandingNavbar = () => {
             <span className="hidden sm:inline whitespace-nowrap">Book Now</span>
           </button>
         </div>
-      </div>
+      </Container>
     </header>
   );
 };

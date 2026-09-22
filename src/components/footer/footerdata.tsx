@@ -22,7 +22,7 @@ export const footerData: FooterData = {
       title: "Location",
       links: [
         {
-          label: "Sukhatall, Nainital, Uttarakhand\n(Near Nainital High Court)",
+          label: "",
           href: contact.addressLink,
         },
       ],
@@ -33,10 +33,7 @@ export const footerData: FooterData = {
       links: [
         {
           label: `Call: ${contact.phone[0]}`,
-          href: `tel:${contact.phone[0]}`,
-
-          label2:  contact.phone[1],
-          href2: `tel:${contact.phone[1]}`,
+          href: `tel:${contact.phone[0]?.replace(/[\s-]/g, "") || ""}`,
         },
 
         {

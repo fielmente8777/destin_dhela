@@ -4,13 +4,18 @@ import React from "react";
 import Image from "next/image";
 import { landingPageData } from "./pagedata";
 import { MoonIcon } from "@/src/utils/icons";
+import { Container, Section } from "@/src/components/sectionComponants";
 
 export const StargazingBanner: React.FC = () => {
   const data = landingPageData.stargazingBanner;
 
   return (
-    <section className="relative w-full flex items-center justify-start overflow-hidden border-b border-[#2D3F23]">
-      {/* Background Image */}
+    <Section
+      id="stargazing-banner"
+      defaultPadding={false}
+      sectionClassName="relative w-full overflow-hidden border-b border-[#2D3F23]"
+    >
+      {/* Background Image (Full Section Width) */}
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={data.image}
@@ -28,8 +33,8 @@ export const StargazingBanner: React.FC = () => {
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 w-full pt-16 sm:pt-24 md:pt-[256px] pb-12 sm:pb-16 md:pb-[75px] px-4 sm:px-8 lg:px-[100px]">
+      {/* Content constrained within Container */}
+      <Container className="relative z-10 pt-16 sm:pt-24 md:pt-[256px] pb-12 sm:pb-16 md:pb-[75px]">
         <div className="max-w-2xl flex flex-col text-left">
           {/* Icon */}
           <div>{MoonIcon()}</div>
@@ -51,8 +56,8 @@ export const StargazingBanner: React.FC = () => {
             dangerouslySetInnerHTML={{ __html: data.description }}
           />
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 
