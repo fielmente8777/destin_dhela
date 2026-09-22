@@ -7,11 +7,11 @@ import { StarIcon, TreeIcon, SettleIcon } from "@/src/utils/icons";
 
 export const About: React.FC = () => {
   return (
-    <section className="relative w-full bg-[#F5F5EB] pt-12 sm:pt-16 md:pt-[111px] pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-16 border-b border-sand-border">
+    <section className="relative w-full bg-[#F5F5EB] pt-12 sm:pt-16 md:pt-[111px] pb-12 sm:pb-16 md:pb-24 px-4 sm:px-8 lg:px-[100px] border-b border-sand-border">
       <div className="mx-auto">
-        {/* Top Header Grid */}
+        {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-20 items-center">
-          {/* Left: Tag + Title */}
+          {/* Tag & Title */}
           <div className="space-y-3 sm:space-y-4 text-left">
             <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
               {landingPageData.about.tag}
@@ -23,13 +23,13 @@ export const About: React.FC = () => {
             />
           </div>
 
-          {/* Right: Intro Paragraph */}
+          {/* Description */}
           <div className="text-[#5E5E5E] text-base md:text-[18px] leading-[26px] font-dm-sans font-normal text-left">
             <p>{landingPageData.about.description}</p>
           </div>
         </div>
 
-        {/* 3 Feature Cards */}
+        {/* Feature Cards */}
         <div className="w-full mx-auto bg-background shadow-xs lg:divide-x divide-secondary overflow-hidden flex flex-col md:flex-row items-stretch max-lg:divide-y mt-8 sm:mt-12 lg:mt-[91px]">
           {landingPageData.about.featureCards.map((card, idx) => (
             <div
@@ -50,7 +50,7 @@ export const About: React.FC = () => {
           ))}
         </div>
 
-        {/* Action Buttons Centered */}
+        {/* Action Buttons */}
         <div className="flex justify-center mt-8 sm:mt-10 lg:mt-[48px]">
           <SectionActionButtons section="Why Destinn" className="justify-center" />
         </div>

@@ -14,7 +14,7 @@ const Container: React.FC<ContainerProps> = ({
 }) => {
   return (
     <div
-      className={`w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 ${className}`}
+      className={`w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-[100px] ${className}`}
       id={id}
       style={style}
       {...props}

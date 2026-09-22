@@ -21,9 +21,9 @@ export const Room: React.FC = () => {
       : ["/dd/room.png"];
 
   return (
-    <section className="w-full bg-[#FEFDFA] pt-12 sm:pt-16 md:pt-[128px] pb-12 sm:pb-16 md:pb-[128px] px-4 sm:px-6 md:px-12 lg:px-16 border-b border-[#D6D2C7]/70">
+    <section className="w-full bg-[#FEFDFA] pt-12 sm:pt-16 md:pt-[128px] pb-12 sm:pb-16 md:pb-[128px] px-4 sm:px-8 lg:px-[100px] border-b border-[#D6D2C7]/70">
       <div className="mx-auto">
-        {/* Mobile Header: Tag + Heading (Visible only on mobile < lg) */}
+        {/* Mobile Header */}
         <div className="lg:hidden flex flex-col mb-6">
           <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#B58A4A] font-normal font-dm-sans">
             {landingPageData.accommodation.tag}
@@ -33,8 +33,8 @@ export const Room: React.FC = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-start gap-8 sm:gap-10 lg:gap-[45px]">
-          {/* Left Side: Room Image Swiper */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-[45px]">
+          {/* Room Image Swiper */}
           <div className="relative w-full lg:w-[647px] shrink-0 h-[340px] sm:h-[420px] lg:h-[528px] rounded-[8px] overflow-hidden shadow-sm group">
             <Swiper
               modules={[Navigation, Autoplay]}
@@ -80,9 +80,9 @@ export const Room: React.FC = () => {
             </button>
           </div>
 
-          {/* Right Side: Details & Highlights */}
+          {/* Details */}
           <div className="w-full lg:w-[628px] shrink-0 flex flex-col">
-            {/* Desktop Header: Tag + Heading (Visible only on desktop lg+) */}
+            {/* Desktop Header */}
             <div className="hidden lg:flex flex-col">
               <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#B58A4A] font-normal font-dm-sans">
                 {landingPageData.accommodation.tag}
@@ -92,12 +92,12 @@ export const Room: React.FC = () => {
               </h2>
             </div>
 
-            {/* Subtext (32px gap on desktop) */}
+            {/* Subtext */}
             <p className="mt-0 lg:mt-[32px] text-base sm:text-[20px] text-[#5E5E5E] font-dm-sans font-normal leading-[30px]">
               {landingPageData.accommodation.subtext}
             </p>
 
-            {/* Bullet List (32px gap, 16px between bullets) */}
+            {/* Bullet List */}
             <ul className="mt-[24px] lg:mt-[32px] space-y-[16px]">
               {landingPageData.accommodation.bullets.map((bullet, idx) => (
                 <li
@@ -112,7 +112,7 @@ export const Room: React.FC = () => {
               ))}
             </ul>
 
-            {/* Action Buttons (32px gap) */}
+            {/* Action Buttons */}
             <div className="mt-[24px] lg:mt-[32px] flex justify-center lg:justify-start w-full">
               <SectionActionButtons section="Accommodation" />
             </div>

@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useBookingForm from "@/src/hooks/useBookingForm";
+import { getDateInputLimits } from "@/src/hooks/getDateInputLimits";
+import { countries } from "@/src/utils/constent";
 import {
   CalendarIcon,
   CallIcon,
@@ -11,13 +13,15 @@ import {
   UserIcon,
   BookingCalenderIcon,
 } from "@/src/utils/formIcons";
-import { countries } from "@/src/utils/constent";
 
 interface Form1Props {
   gridView?: boolean;
 }
 
 const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
   const {
     isSubmitting,
     errors,
@@ -28,10 +32,16 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
   } = useBookingForm({
     includeCheckIn: true,
     includeCheckOut: true,
+    onSubmitSuccess: () => {
+      setStartDate(null);
+      setEndDate(null);
+    },
   });
 
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
+  const { min, max } = getDateInputLimits({
+    showPast: false,
+    showFuture: true,
+  });
 
   const handleDateChange = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
@@ -59,7 +69,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
           : "flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-4 sm:gap-y-3 w-full"
       } font-open-sans font-normal text-[14px] leading-[20px] tracking-normal bg-transparent`}
     >
-      {/* 1. Name Field */}
+      {/* Name */}
       <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
         <div className={`flex items-center justify-start gap-2 bg-[#FFF9F1] ${gridView ? "w-full" : "w-full sm:w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#FFFFFF] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.2)] shrink-0`}>
           <label className="text-[#777777] text-sm shrink-0 flex items-center justify-center">
@@ -81,7 +91,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
         )}
       </div>
 
-      {/* 2. Phone Field with Country Code */}
+      {/* Phone */}
       <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
         <div className={`flex items-center justify-start gap-1.5 bg-[#FFF9F1] ${gridView ? "w-full" : "w-full sm:w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#FFFFFF] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.2)] shrink-0`}>
           <label className="text-[#777777] text-sm shrink-0 flex items-center justify-center">
@@ -119,7 +129,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
         )}
       </div>
 
-      {/* 3. Email Field */}
+      {/* Email */}
       <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
         <div className={`flex items-center justify-start gap-2 bg-[#FFF9F1] ${gridView ? "w-full" : "w-full sm:w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#FFFFFF] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.2)] shrink-0`}>
           <label className="text-[#777777] text-sm shrink-0 flex items-center justify-center">
@@ -141,7 +151,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
         )}
       </div>
 
-      {/* 4. Check-in & out Date Field */}
+      {/* Date Picker */}
       <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
         <div className={`flex items-center justify-start gap-2 bg-[#FFF9F1] ${gridView ? "w-full" : "w-full sm:w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#FFFFFF] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.2)] shrink-0`}>
           <label className="text-[#777777] text-sm shrink-0 flex items-center justify-center">
@@ -154,19 +164,22 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
             onChange={handleDateChange}
             placeholderText="Check-in & out"
             wrapperClassName="w-full flex-1 flex items-center"
-            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] tracking-[0px] w-full text-left"
-            minDate={new Date()}
+            className="bg-transparent outline-none text-[#777777] placeholder-[#777777] font-open-sans font-normal text-[14px] leading-[20px] tracking-[0px] w-full text-left cursor-pointer"
+            minDate={min ? new Date(min) : new Date()}
+            maxDate={max ? new Date(max) : undefined}
             dateFormat="dd MMM yyyy"
+            calendarClassName="!z-[99999]"
+            popperClassName="!z-[99999]"
           />
         </div>
-        {errors.checkIn && (
+        {(errors.checkIn || errors.checkOut) && (
           <span className="text-red-500 font-open-sans font-normal text-[14px] leading-[20px] tracking-normal whitespace-nowrap">
-            {errors.checkIn}
+            {errors.checkIn || errors.checkOut}
           </span>
         )}
       </div>
 
-      {/* 5. Submit Button */}
+      {/* Submit Button */}
       <div className={`flex ${gridView ? "w-full mt-2" : "w-full sm:w-auto sm:items-center"}`}>
         <button
           type="submit"

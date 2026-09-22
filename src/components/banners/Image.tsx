@@ -26,8 +26,8 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
   const images = hero.images && hero.images.length > 0 ? hero.images : ["/dd/banner.png", "/dd/banner.png", "/dd/banner.png"];
 
   return (
-    <section className="relative w-full h-[620px] sm:h-[720px] md:h-[800px] overflow-hidden">
-      {/* Background Swiper with Autoplay */}
+    <section className="relative w-full h-[650px] sm:h-[720px] lg:h-[800px] overflow-hidden">
+      {/* Background Swiper */}
       <Swiper
         modules={[Autoplay]}
         slidesPerView={1}
@@ -57,29 +57,29 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
         ))}
       </Swiper>
 
-      {/* Hero Content Centered with top offset for overlay navbar */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 text-center pt-16 sm:pt-20 pointer-events-none">
-        <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 md:space-y-5">
-          {/* Badge Tag: Mobile hugs text tightly / Desktop: 500px width */}
+      {/* Hero Content */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center lg:justify-start px-4 sm:px-8 lg:px-[100px] text-center pt-10 sm:pt-14 lg:pt-[281px] pb-6 sm:pb-8 lg:pb-0 pointer-events-none">
+        <div className="max-w-4xl mx-auto flex flex-col items-center">
+          {/* Badge */}
           <div className="inline-flex items-center justify-center w-auto max-w-[92vw] sm:w-full sm:max-w-[500px] h-[34px] px-3.5 sm:px-4 bg-[#FFFFFF1A] backdrop-blur-[12px] border border-[#FFFFFF33] rounded-full text-[11px] sm:text-[12px] leading-[15px] font-dm-sans font-semibold uppercase tracking-[1.5px] sm:tracking-[2.3px] text-white">
             {hero.tag}
           </div>
 
           {/* Heading */}
           <h1
-            className="font-fraunces font-bold text-3xl sm:text-5xl lg:text-[56px] leading-tight sm:leading-tight lg:leading-[64px] tracking-[0px] text-white text-center drop-shadow-md"
+            className="mt-[12px] font-fraunces font-bold text-3xl sm:text-5xl lg:text-[56px] leading-tight sm:leading-tight lg:leading-[64px] tracking-[0px] text-white text-center drop-shadow-md"
             dangerouslySetInnerHTML={{ __html: hero.title }}
           />
 
-          {/* Subtitle / Description */}
-          <p className="font-dm-sans font-normal text-[16px] sm:text-[18px] leading-[24px] sm:leading-[26px] tracking-[0px] text-white text-center max-w-2xl mx-auto drop-shadow-sm">
+          {/* Description */}
+          <p className="mt-[12px] font-dm-sans font-normal text-[16px] sm:text-[18px] leading-[24px] sm:leading-[26px] tracking-[0px] text-white text-center max-w-2xl mx-auto drop-shadow-sm">
             {hero.description}
           </p>
         </div>
       </div>
 
-      {/* Pagination Dot Buttons (52 Hug x 12 Hug): Always visible, interactive */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center gap-[8px] w-[52px] h-[12px]">
+      {/* Pagination Dots */}
+      <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center gap-[8px] w-[52px] h-[12px]">
         {images.map((_, idx) => (
           <button
             key={idx}

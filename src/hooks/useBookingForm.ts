@@ -1,10 +1,11 @@
 "use client";
+
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useDebounce } from "./useDebounce";
-import { contact } from "@/utils/constent";
+import { contact } from "@/src/utils/constent";
 
-interface BookingFormData {
+export interface BookingFormData {
   name: string;
   countryCode: string;
   phone: string;
@@ -16,7 +17,7 @@ interface BookingFormData {
   [key: string]: string | undefined;
 }
 
-interface FormErrors {
+export interface FormErrors {
   name?: string;
   phone?: string;
   email?: string;
@@ -26,11 +27,13 @@ interface FormErrors {
   [key: string]: string | undefined;
 }
 
-interface UseBookingFormProps {
+export interface UseBookingFormProps {
+  formDomain?: string;
+  formHid?: string;
+  thankYouUrl?: string;
   includeCheckIn?: boolean;
   includeCheckOut?: boolean;
   includeMessage?: boolean;
-  formHid?: string;
   onSubmitSuccess?: () => void;
 }
 
@@ -45,13 +48,15 @@ const initialFormData: BookingFormData = {
   city: "",
 };
 
-const useBookingForm = ({
-  includeCheckIn,
-  includeCheckOut,
-  includeMessage,
-  formHid,
+export const useBookingForm = ({
+  formDomain = contact.formDomain || "Destin DeLa",
+  formHid = contact.formHid || "",
+  thankYouUrl = "/thank-you/",
+  includeCheckIn = true,
+  includeCheckOut = true,
+  includeMessage = false,
   onSubmitSuccess,
-}: UseBookingFormProps) => {
+}: UseBookingFormProps = {}) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formData, setFormData] = useState<BookingFormData>(initialFormData);
@@ -64,10 +69,33 @@ const useBookingForm = ({
   const validateEmail = (email: string): boolean =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
-  const validatePhone = (phone: string): boolean => {
-    const re = /^[0-9]{10,15}$/;
-    return re.test(phone.trim());
-  };
+  const validatePhone = (phone: string): boolean =>
+    /^[0-9]{10,15}$/.test(phone.trim());
+
+  // Debounced validations
+  useEffect(() => {
+    if (debouncedEmail && !validateEmail(debouncedEmail)) {
+      setErrors((prev) => ({ ...prev, email: "Invalid email format" }));
+    } else if (debouncedEmail && validateEmail(debouncedEmail)) {
+      setErrors((prev) => ({ ...prev, email: undefined }));
+    }
+  }, [debouncedEmail]);
+
+  useEffect(() => {
+    if (debouncedPhone && !validatePhone(debouncedPhone)) {
+      setErrors((prev) => ({ ...prev, phone: "Phone must be 10-15 digits" }));
+    } else if (debouncedPhone && validatePhone(debouncedPhone)) {
+      setErrors((prev) => ({ ...prev, phone: undefined }));
+    }
+  }, [debouncedPhone]);
+
+  useEffect(() => {
+    if (debouncedName && !debouncedName.trim()) {
+      setErrors((prev) => ({ ...prev, name: "Name cannot be empty" }));
+    } else if (debouncedName && debouncedName.trim()) {
+      setErrors((prev) => ({ ...prev, name: undefined }));
+    }
+  }, [debouncedName]);
 
   const validateForm = useCallback(() => {
     const newErrors: FormErrors = {};
@@ -99,75 +127,62 @@ const useBookingForm = ({
       isValid = false;
     }
 
+    if (includeCheckOut && !formData.checkOut) {
+      newErrors.checkOut = "Check-out date is required";
+      isValid = false;
+    }
+
     setErrors(newErrors);
     return isValid;
-  }, [formData, includeCheckIn]);
+  }, [formData, includeCheckIn, includeCheckOut]);
 
-  // handle input change
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-    // Clear error for this field when user types
-    if (errors[name as keyof FormErrors]) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        [name]: undefined,
-      }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
 
   const setFieldValue = (field: keyof BookingFormData, value: string) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [field]: value,
-    }));
-
-    if (errors[field as keyof FormErrors]) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        [field]: undefined,
-      }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: undefined }));
     }
   };
 
-  // reset form
   const resetForm = () => {
     setFormData(initialFormData);
     setErrors({});
   };
 
-  // handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (!validateForm()) return;
 
     setIsSubmitting(true);
     try {
-      const descriptionPart = [];
-      if (includeCheckIn) {
-        descriptionPart.push(`Check-in: ${formData.checkIn}`);
+      const descriptionParts: string[] = [];
+      if (includeCheckIn && formData.checkIn) {
+        descriptionParts.push(`Check-in: ${formData.checkIn}`);
       }
-      if (includeCheckOut) {
-        descriptionPart.push(`Check-out: ${formData.checkOut}`);
+      if (includeCheckOut && formData.checkOut) {
+        descriptionParts.push(`Check-out: ${formData.checkOut}`);
       }
-      if (includeMessage) {
-        descriptionPart.push(`Message: ${formData.message}`);
+      if (includeMessage && formData.message) {
+        descriptionParts.push(`Message: ${formData.message}`);
       }
       if (formData.city) {
-        descriptionPart.push(`City: ${formData.city}`);
+        descriptionParts.push(`City: ${formData.city}`);
       }
-      const description = descriptionPart.join("\n");
+      const description = descriptionParts.join("\n");
 
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: contact.formDomain,
+          Domain: formDomain,
           Name: formData.name,
           email: formData.email,
           Contact: formData.countryCode + formData.phone,
@@ -175,27 +190,24 @@ const useBookingForm = ({
           check_out: formData.checkOut,
           Description: description,
           created_from: "webform",
-          source_url: window.location.href,
-          hId: contact.formHid ? contact.formHid : formHid,
-        },
+          source_url: typeof window !== "undefined" ? window.location.href : "",
+          hId: formHid,
+        }
       );
 
-      if (data.Status) {
+      if (data?.Status) {
         setSubmitSuccess(true);
         resetForm();
-        if (onSubmitSuccess) {
-          onSubmitSuccess();
+        if (onSubmitSuccess) onSubmitSuccess();
+        setTimeout(() => setSubmitSuccess(false), 3000);
+        if (typeof window !== "undefined") {
+          window.open(thankYouUrl, "_blank");
         }
-
-        setTimeout(() => {
-          setSubmitSuccess(false);
-        }, 3000);
-        window.open("/thank-you/", "_blank");
       } else {
-        alert(data.message || "Something went wrong. Please try again.");
+        alert(data?.message || "Something went wrong. Please try again.");
       }
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error("Booking form error:", error);
       alert("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -207,16 +219,11 @@ const useBookingForm = ({
     setFormData,
     errors,
     isSubmitting,
-    setIsSubmitting,
     submitSuccess,
-    setSubmitSuccess,
-    includeCheckIn,
-    includeCheckOut,
-    includeMessage,
-    onSubmitSuccess,
     handleChange,
     setFieldValue,
     handleSubmit,
+    resetForm,
   };
 };
 

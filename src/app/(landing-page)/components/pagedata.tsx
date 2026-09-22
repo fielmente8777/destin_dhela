@@ -125,7 +125,7 @@ export const landingPageData = {
       { place: "Ramnagar town", distance: "≈ 4 km" },
       { place: "Ramnagar railway station", distance: "≈ 4 km" },
       { place: "Dhela Safari Entrance Gate", distance: "≈ 8 km" },
-      { place: "Pantnagar airport", distance: "≈ 80 km" },
+      { place: "Pantnagar airport", distance: "≈ 8 km" },
     ],
   },
   gallery: {

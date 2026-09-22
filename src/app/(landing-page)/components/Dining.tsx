@@ -10,9 +10,9 @@ export const Dining: React.FC = () => {
   const data = landingPageData.dining;
 
   return (
-    <section className="w-full bg-[#F5F5EB] pt-12 sm:pt-16 md:pt-[87px] pb-12 sm:pb-16 md:pb-[135px] px-4 sm:px-6 md:px-12 lg:px-16 border-b border-[#D6D2C7]/70">
+    <section className="w-full bg-[#F5F5EB] pt-12 sm:pt-16 md:pt-[87px] pb-12 sm:pb-16 md:pb-[135px] px-4 sm:px-8 lg:px-[100px] border-b border-[#D6D2C7]/70">
       <div className="mx-auto">
-        {/* Mobile Header: Tag + Heading (Visible only on mobile < lg) */}
+        {/* Mobile Header */}
         <div className="lg:hidden flex flex-col mb-6">
           <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
             {data.tag}
@@ -24,10 +24,10 @@ export const Dining: React.FC = () => {
           />
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-start gap-8 sm:gap-10 lg:gap-[76px]">
-          {/* Left Side: Dining Outlets & Action CTAs (Desktop: Left column / Mobile: after image) */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-[76px]">
+          {/* Details & Actions */}
           <div className="w-full lg:w-[596px] shrink-0 flex flex-col order-2 lg:order-1">
-            {/* Desktop Header: Tag + Heading + Description (Visible only on desktop lg+) */}
+            {/* Desktop Header */}
             <div className="hidden lg:flex flex-col">
               <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
                 {data.tag}
@@ -43,12 +43,12 @@ export const Dining: React.FC = () => {
               </p>
             </div>
 
-            {/* Mobile Description: Below image on mobile */}
+            {/* Mobile Description */}
             <p className="lg:hidden mt-0 text-base sm:text-[18px] text-[#685F51] font-dm-sans font-normal leading-[26px] tracking-[0px]">
               {data.description}
             </p>
 
-            {/* Two Outlets Side by Side */}
+            {/* Outlets */}
             <div className="mt-8 lg:mt-[40px] flex flex-col sm:flex-row gap-[28px]">
               {data.outlets.map((outlet, idx) => (
                 <div
@@ -89,7 +89,7 @@ export const Dining: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Dining Photo (Mobile: order-1 right after header / Desktop: order-2) */}
+          {/* Dining Image */}
           <div className="relative w-full max-w-[648px] lg:w-[648px] shrink-0 h-[320px] sm:h-[460px] lg:h-[655px] rounded-[8px] overflow-hidden shadow-sm order-1 lg:order-2">
             <Image
               src={data.image}

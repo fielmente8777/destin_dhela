@@ -8,9 +8,9 @@ export const Location: React.FC = () => {
   const data = landingPageData.location;
 
   return (
-    <section className="w-full bg-[#FDF9EE] pt-12 sm:pt-16 md:pt-[134px] pb-12 sm:pb-16 md:pb-[134px] px-4 sm:px-6 md:px-12 lg:px-16 border-b border-[#D6D2C7]/70">
+    <section className="w-full bg-[#FDF9EE] pt-12 sm:pt-16 md:pt-[134px] pb-12 sm:pb-16 md:pb-[134px] px-4 sm:px-8 lg:px-[100px] border-b border-[#D6D2C7]/70">
       <div className="mx-auto">
-        {/* Mobile Header: Tag + Heading (Visible only on mobile < lg) */}
+        {/* Mobile Header */}
         <div className="lg:hidden flex flex-col mb-6">
           <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
             {data.tag}
@@ -22,10 +22,10 @@ export const Location: React.FC = () => {
           />
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-start gap-8 sm:gap-10 lg:gap-[76px]">
-          {/* Left Side: Distance Table & Action CTAs (Desktop: Left column / Mobile: after map) */}
-          <div className="w-full lg:w-[648px] shrink-0 flex flex-col order-2 lg:order-1">
-            {/* Desktop Header: Tag + Heading + Subtext (Visible only on desktop lg+) */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-12 xl:gap-[76px]">
+          {/* Details & Actions */}
+          <div className="w-full lg:w-[596px] lg:max-w-[596px] flex flex-col order-2 lg:order-1">
+            {/* Desktop Header */}
             <div className="hidden lg:flex flex-col">
               <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
                 {data.tag}
@@ -41,12 +41,12 @@ export const Location: React.FC = () => {
               </p>
             </div>
 
-            {/* Mobile Description: Below image/map on mobile */}
+            {/* Mobile Description */}
             <p className="lg:hidden mt-0 text-base sm:text-[18px] text-[#6B635E] font-dm-sans font-normal leading-[26px] tracking-[0px]">
               {data.subtext}
             </p>
 
-            {/* Distance Matrix Table */}
+            {/* Distance Matrix */}
             <div className="mt-6 lg:mt-[41px] border-y-[0.8px] divide-y-[0.8px] border-[#D6D2C7] divide-[#D6D2C7]">
               {data.matrix.map((row, idx) => (
                 <div key={idx} className="flex items-center justify-between pt-[14px] pb-[15px]">
@@ -66,8 +66,8 @@ export const Location: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Map Container (Mobile: order-1 right after header / Desktop: order-2) */}
-          <div className="relative w-full max-w-[648px] lg:w-[648px] shrink-0 h-[300px] sm:h-[450px] lg:h-[600px] rounded-[8px] overflow-hidden shadow-sm bg-[#607839] order-1 lg:order-2" />
+          {/* Map */}
+          <div className="relative w-full lg:flex-1 max-w-[648px] h-[300px] sm:h-[450px] lg:h-[600px] rounded-[8px] overflow-hidden shadow-sm bg-[#607839] order-1 lg:order-2" />
         </div>
       </div>
     </section>

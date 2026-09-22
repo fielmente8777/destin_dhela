@@ -15,11 +15,11 @@ export const Faqs: React.FC = () => {
   return (
     <section
       id="faqs"
-      className="w-full bg-[#FDF9EE] pt-12 sm:pt-16 md:pt-[80px] pb-12 sm:pb-16 md:pb-[72px] px-4 sm:px-6 md:px-12 lg:px-16 border-b border-[#D6D2C7]/70 relative z-10"
+      className="w-full bg-[#FDF9EE] pt-12 sm:pt-16 md:pt-[80px] pb-12 sm:pb-16 md:pb-[72px] px-4 sm:px-8 lg:px-[100px] border-b border-[#D6D2C7]/70 relative z-10"
     >
       <div className="mx-auto">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8 sm:gap-10 lg:gap-[76px]">
-          {/* Left Column: Heading & CTAs */}
+          {/* Heading & Actions */}
           <div className="w-full lg:w-[596px] shrink-0 flex flex-col">
             <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#614B33] font-normal font-dm-sans">
               {landingPageData.faqs.tag}
@@ -30,13 +30,13 @@ export const Faqs: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: landingPageData.faqs.heading }}
             />
 
-            {/* Desktop CTAs on Left Column (Visible only on desktop lg+) */}
+            {/* Desktop Actions */}
             <div className="hidden lg:block mt-[40px]">
               <SectionActionButtons section="FAQs" />
             </div>
           </div>
 
-          {/* Right Column: FAQ Accordion & Mobile Centered CTAs */}
+          {/* FAQ Accordion */}
           <div className="w-full lg:w-[647px] shrink-0 flex flex-col">
             <div className="w-full border-y-[0.5px] divide-y-[0.5px] border-[#614B33] divide-[#614B33] font-sans">
               {landingPageData.faqs.items.map((item, idx) => {
@@ -74,7 +74,7 @@ export const Faqs: React.FC = () => {
               })}
             </div>
 
-            {/* Mobile CTAs: Positioned below FAQs and Center Aligned */}
+            {/* Mobile Actions */}
             <div className="lg:hidden mt-8 sm:mt-10 flex justify-center w-full">
               <SectionActionButtons section="FAQs" className="justify-center" />
             </div>

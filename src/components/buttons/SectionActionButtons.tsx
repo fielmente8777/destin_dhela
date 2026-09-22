@@ -20,7 +20,7 @@ export const SectionActionButtons: React.FC<SectionActionButtonsProps> = ({
 
   return (
     <div className={`flex flex-row items-center justify-center lg:justify-start gap-[12px] font-open-sans ${className}`}>
-      {/* Enquire Now WhatsApp Button */}
+      {/* Enquire Now */}
       <a
         href={contact.WhatsappCta}
         target="_blank"
@@ -31,7 +31,7 @@ export const SectionActionButtons: React.FC<SectionActionButtonsProps> = ({
         <span>Enquire Now</span>
       </a>
 
-      {/* Book Now Popup Trigger Button */}
+      {/* Book Now */}
       <button
         type="button"
         onClick={() => setIsOpenFormPopUp(true)}

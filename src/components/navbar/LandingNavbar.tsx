@@ -18,8 +18,8 @@ const LandingNavbar = () => {
 
   return (
     <header className="absolute top-[15px] left-0 right-0 z-40 w-full bg-transparent">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[60px] flex items-center justify-between">
-        {/* LOGO CONTAINER: Width: 152px, Height: 80px, Radius: 8px, Bg: White */}
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[100px] flex items-center justify-between">
+        {/* Logo */}
         <Link
           href="/"
           className="w-[115px] h-[60px] sm:w-[152px] sm:h-[80px] bg-white rounded-[8px] p-2 sm:p-3 shadow-md flex items-center justify-center border border-white/60 hover:shadow-lg transition-shadow shrink-0"
@@ -35,9 +35,9 @@ const LandingNavbar = () => {
           </div>
         </Link>
 
-        {/* Action CTAs (Mobile: Icon buttons 44x44 / Desktop: Width 160px each, Gap: 12px) */}
+        {/* Action Buttons */}
         <div className="flex items-center gap-[8px] sm:gap-[12px]">
-          {/* Enquire Now Button */}
+          {/* Enquire Now */}
           <a
             href={contact.WhatsappCta}
             target="_blank"
@@ -49,7 +49,7 @@ const LandingNavbar = () => {
             <span className="hidden sm:inline whitespace-nowrap">Enquire Now</span>
           </a>
 
-          {/* Book Now Button */}
+          {/* Book Now */}
           <button
             type="button"
             onClick={() => setIsOpenFormPopUp(true)}

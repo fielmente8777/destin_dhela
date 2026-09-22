@@ -17,14 +17,14 @@ export default function LandingPage() {
   return (
     <div className="w-full bg-[#FDF9EE] min-h-screen flex justify-center">
       <main className="min-h-screen bg-[#FDF9EE] text-[#192118] font-sans flex flex-col w-full mx-auto overflow-x-hidden">
-        {/* 1. Hero Image Swiper Banner */}
+        {/* Hero Banner */}
         <ImageB hero={landingPageData.hero} />
 
-        {/* 2. Sliding Ticker Marquee (Above Form) */}
+        {/* Sliding Title */}
         <SlidingTitle items={landingPageData.step} />
 
-        {/* 3. Horizontal Booking Form Strip & Benefits Disclaimer */}
-        <div className="w-full bg-[#607839] pt-[24px] pb-[24px] px-4 sm:px-6 md:px-8 flex flex-col justify-center items-center gap-[20px]">
+        {/* Booking Form */}
+        <div className="w-full bg-[#607839] pt-[24px] pb-[24px] px-4 sm:px-8 lg:px-[100px] flex flex-col justify-center items-center gap-[20px]">
           <div id="form" className="w-full max-w-7xl mx-auto flex justify-center">
             <Form1 />
           </div>
@@ -34,34 +34,34 @@ export default function LandingPage() {
           />
         </div>
 
-        {/* 3. Why Destinn (About with 3 feature cards) */}
+        {/* About */}
         <About />
 
-        {/* 4. Sliding Ticker Marquee */}
+        {/* Sliding Title */}
         <SlidingTitle items={landingPageData.step} />
 
-        {/* 5. Accommodation (14 Rooms showcase) */}
+        {/* Accommodation */}
         <Room />
 
-        {/* 6. From Safari To Stargazing (4-Step dark itinerary) */}
+        {/* Safari & Stargazing */}
         <SafariStargazing />
 
-        {/* 7. Stargazing Signature Experience Banner */}
+        {/* Stargazing Banner */}
         <StargazingBanner />
 
-        {/* 8. Food & Togetherness (Dining) */}
+        {/* Dining */}
         <Dining />
 
-        {/* 9. Location & Distance Matrix with Map */}
+        {/* Location */}
         <Location />
 
-        {/* 10. Visual Gallery Grid */}
+        {/* Gallery */}
         <Gallery />
 
-        {/* 11. Good To Know / FAQs */}
+        {/* FAQs */}
         <Faqs />
 
-        {/* 12. Footer with Form Strip & Contact Info */}
+        {/* Footer */}
         <LandingFooter />
       </main>
     </div>

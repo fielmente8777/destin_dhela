@@ -30,7 +30,7 @@ const OfferSection = () => {
           : "relative w-full"
         }`}
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 text-center">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-[100px] text-center">
         <p className="text-center text-white text-xs md:text-sm font-sans tracking-wide">
           {landingPageData.offer[0]}
         </p>

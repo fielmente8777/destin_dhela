@@ -8,9 +8,9 @@ export const SafariStargazing: React.FC = () => {
   const data = landingPageData.safariStargazing;
 
   return (
-    <section className="w-full bg-[#182107] text-white pt-12 sm:pt-16 md:pt-[139px] pb-12 sm:pb-16 md:pb-[139px] px-4 sm:px-6 md:px-12 lg:px-16 border-b border-[#2D3F23]">
+    <section className="w-full bg-[#182107] text-white pt-12 sm:pt-16 md:pt-[139px] pb-12 sm:pb-16 md:pb-[139px] px-4 sm:px-8 lg:px-[100px] border-b border-[#2D3F23]">
       <div className="mx-auto">
-        {/* Mobile Header: Tag + Heading (Visible only on mobile < lg) */}
+        {/* Mobile Header */}
         <div className="lg:hidden flex flex-col mb-6">
           <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#B58A4A] font-normal font-dm-sans">
             {data.tag}
@@ -22,10 +22,10 @@ export const SafariStargazing: React.FC = () => {
           />
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 lg:gap-[52px]">
-          {/* Left Side: 4 Steps (Desktop: Left column / Mobile: after image) */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-[52px]">
+          {/* Itinerary */}
           <div className="w-full max-w-[596px] lg:w-[596px] shrink-0 flex flex-col order-2 lg:order-1">
-            {/* Desktop Header: Tag + Heading (Visible only on desktop lg+) */}
+            {/* Desktop Header */}
             <div className="hidden lg:block">
               <p className="text-[16px] leading-[24px] tracking-[2.3px] uppercase text-[#B58A4A] font-normal font-dm-sans">
                 {data.tag}
@@ -37,7 +37,7 @@ export const SafariStargazing: React.FC = () => {
               />
             </div>
 
-            {/* 4 Itinerary Steps */}
+            {/* Itinerary Steps */}
             <div className="w-full flex flex-col mt-0 lg:mt-[40px]">
               {data.steps.map((item, idx) => (
                 <div
@@ -60,7 +60,7 @@ export const SafariStargazing: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Image Showcase (Mobile: order-1 right after header / Desktop: order-2) */}
+          {/* Image */}
           <div className="w-full max-w-[672px] lg:w-[672px] shrink-0 flex justify-center order-1 lg:order-2">
             <div className="relative w-full h-[360px] sm:h-[480px] lg:h-[666px] rounded-[8px] overflow-hidden shadow-xl">
               <Image

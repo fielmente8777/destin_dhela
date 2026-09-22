@@ -1,100 +1,120 @@
 "use client";
 
-
-import { useWebContext } from "@/src/context-api/WebContext";
+import React from "react";
 import Link from "next/link";
+import { useWebContext } from "@/src/context-api/WebContext";
+
 interface LinkButtonProps {
   href: string;
   label: string;
   className?: string;
   labelClass?: string;
   whatsAppIcon?: boolean;
-  callIcon?: boolean;
   calendarIcon?: boolean;
+  callIcon?: boolean;
   arrowIcon?: boolean;
-  getDirectionIcon?: boolean;
   [key: string]: unknown;
-  showSecureBadge?: boolean;
-  secureBadgeText?: string;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = ({
+export const LinkButton: React.FC<LinkButtonProps> = ({
   href,
   label,
   className = "",
   labelClass = "",
-  arrowIcon = false,
   whatsAppIcon = false,
-  callIcon = false,
   calendarIcon = false,
+  callIcon = false,
+  arrowIcon = false,
   ...props
 }) => {
   const { setIsOpenFormPopUp } = useWebContext();
-  const handleClick = () => {
-    setIsOpenFormPopUp(true);
-    console.log("first");
-  };
+
+  // Book Now -> Opens Popup Form Modal
+  if (href === "#form") {
+    return (
+      <button
+        type="button"
+        onClick={() => setIsOpenFormPopUp(true)}
+        className={`inline-flex items-center justify-center gap-2 cursor-pointer transition-all ${className}`}
+        {...props}
+      >
+        {calendarIcon && <CalendarIcon />}
+        {whatsAppIcon && <WhatsAppIcon />}
+        {callIcon && <CallIcon />}
+        <span className={labelClass}>{label}</span>
+        {arrowIcon && <ArrowIcon />}
+      </button>
+    );
+  }
+
+  // Enquire Now (WhatsApp) / Call / External Links
   return (
-    <>
-      {href === "#form" ? (
-        <button
-          onClick={handleClick}
-          className={`flex items-center gap-2 shadow-md border w-fit px-4 py-2 hover:scale-95 transition-all duration-300 ease-in-out hover:scale-x-105 active:scale-95 ${className}`}
-          {...props}
-        >
-          {whatsAppIcon && (
-            <span>
-              <WhatsAppIcon />
-            </span>
-          )}
-          {callIcon && (
-            <span>
-              <CallIcon />
-            </span>
-          )}
-          {calendarIcon && (
-            <span>
-              {" "}
-              <CalendarIcon />
-            </span>
-          )}
-          <span className={`${labelClass}`}> {label}</span>
-
-          {arrowIcon && (
-            <span>
-              <ArrowIcon />
-            </span>
-          )}
-
-          {/* {getDirectionIcon && <GetDirections />}  */}
-        </button>
-      ) : (
-        <Link
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex items-center uppercase tracking-widest gap-1 border w-fit px-4 py-2 hover:scale-95 transition-all duration-300 ease-in-out hover:scale-x-105 active:scale-95 ${className}`}
-          {...props}
-        >
-          {whatsAppIcon && <WhatsAppIcon />}
-          {callIcon && <CallIcon />}
-          {calendarIcon && <CalendarIcon />}
-          <span className={`${labelClass}`}> {label}</span>
-
-          {arrowIcon && (
-            <span>
-              <ArrowIcon />
-            </span>
-          )}
-
-          {/* {getDirectionIcon && <GetDirections />}  */}
-        </Link>
-      )}
-    </>
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2 cursor-pointer transition-all ${className}`}
+      {...props}
+    >
+      {whatsAppIcon && <WhatsAppIcon />}
+      {callIcon && <CallIcon />}
+      {calendarIcon && <CalendarIcon />}
+      <span className={labelClass}>{label}</span>
+      {arrowIcon && <ArrowIcon />}
+    </Link>
   );
 };
 
 export default LinkButton;
+
+// Built-in Icons (SVG)
+export const WhatsAppIcon = () => (
+  <svg
+    width={18}
+    height={18}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  </svg>
+);
+
+export const CalendarIcon = () => (
+  <svg
+    width={18}
+    height={18}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+    <line x1="16" y1="2" x2="16" y2="6" />
+    <line x1="8" y1="2" x2="8" y2="6" />
+    <line x1="3" y1="10" x2="21" y2="10" />
+  </svg>
+);
+
+export const CallIcon = () => (
+  <svg
+    width={18}
+    height={18}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+  </svg>
+);
 
 export const ArrowIcon = () => (
   <svg
@@ -110,52 +130,6 @@ export const ArrowIcon = () => (
     />
     <path
       d="M0 1.19999C0 0.75817 0.35178 0.399994 0.785714 0.399994H10.2143C10.6482 0.399994 11 0.75817 11 1.19999V10.8C11 11.2418 10.6482 11.6 10.2143 11.6C9.78034 11.6 9.42857 11.2418 9.42857 10.8V1.99999H0.785714C0.35178 1.99999 0 1.64182 0 1.19999Z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-export const WhatsAppIcon = () => (
-  <svg
-    width={24}
-    height={24}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M12.001 2C17.524 2 22.001 6.477 22.001 12C22.001 17.523 17.524 22 12.001 22C10.2337 22.003 8.49757 21.5353 6.97099 20.645L2.00499 22L3.35699 17.032C2.46595 15.5049 1.99789 13.768 2.00099 12C2.00099 6.477 6.47799 2 12.001 2ZM8.59299 7.3L8.39299 7.308C8.26368 7.31691 8.13734 7.35087 8.02099 7.408C7.91257 7.46951 7.81355 7.5463 7.72699 7.636C7.60699 7.749 7.53899 7.847 7.46599 7.942C7.09611 8.4229 6.89696 9.01331 6.89999 9.62C6.90199 10.11 7.02999 10.587 7.22999 11.033C7.63899 11.935 8.31199 12.89 9.19999 13.775C9.41399 13.988 9.62399 14.202 9.84999 14.401C10.9534 15.3724 12.2683 16.073 13.69 16.447L14.258 16.534C14.443 16.544 14.628 16.53 14.814 16.521C15.1052 16.5056 15.3895 16.4268 15.647 16.29C15.7778 16.2223 15.9056 16.1489 16.03 16.07C16.03 16.07 16.0723 16.0413 16.155 15.98C16.29 15.88 16.373 15.809 16.485 15.692C16.569 15.6053 16.639 15.5047 16.695 15.39C16.773 15.227 16.851 14.916 16.883 14.657C16.907 14.459 16.9 14.351 16.897 14.284C16.893 14.177 16.804 14.066 16.707 14.019L16.125 13.758C16.125 13.758 15.255 13.379 14.723 13.137C14.6673 13.1128 14.6077 13.0989 14.547 13.096C14.4786 13.0888 14.4094 13.0965 14.3442 13.1184C14.279 13.1403 14.2192 13.176 14.169 13.223C14.164 13.221 14.097 13.278 13.374 14.154C13.3325 14.2098 13.2753 14.2519 13.2098 14.2751C13.1443 14.2982 13.0733 14.3013 13.006 14.284C12.9408 14.2666 12.877 14.2446 12.815 14.218C12.691 14.166 12.648 14.146 12.563 14.11C11.9889 13.8599 11.4574 13.5215 10.988 13.107C10.862 12.997 10.745 12.877 10.625 12.761C10.2316 12.3842 9.88874 11.958 9.60499 11.493L9.54599 11.398C9.50425 11.3338 9.47003 11.265 9.44399 11.193C9.40599 11.046 9.50499 10.928 9.50499 10.928C9.50499 10.928 9.74799 10.662 9.86099 10.518C9.97099 10.378 10.064 10.242 10.124 10.145C10.242 9.955 10.279 9.76 10.217 9.609C9.93699 8.925 9.64766 8.24467 9.34899 7.568C9.28999 7.434 9.11499 7.338 8.95599 7.319C8.90199 7.31233 8.84799 7.307 8.79399 7.303C8.65972 7.2953 8.52508 7.29664 8.39099 7.307L8.59299 7.3Z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-export const CallIcon = () => (
-  <svg
-    width={24}
-    height={24}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M7.77198 2.43881L8.84898 2.09481C9.85698 1.77281 10.935 2.29381 11.367 3.31181L12.227 5.33981C12.602 6.22281 12.394 7.26181 11.713 7.90781L9.81998 9.70581C9.93665 10.7818 10.298 11.8408 10.904 12.8828C11.4803 13.8907 12.2524 14.773 13.175 15.4778L15.451 14.7178C16.313 14.4308 17.252 14.7618 17.781 15.5388L19.013 17.3488C19.629 18.2528 19.518 19.4988 18.755 20.2648L17.937 21.0858C17.123 21.9028 15.961 22.1998 14.885 21.8638C12.3463 21.0718 10.012 18.7208 7.88198 14.8108C5.74931 10.8941 4.99665 7.57148 5.62398 4.84281C5.88798 3.69481 6.70598 2.77981 7.77398 2.43881"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-export const CalendarIcon = ({ className = "w-[17px] h-[17px]" }: { className?: string }) => (
-  <svg
-    width={17}
-    height={17}
-    viewBox="0 0 17 17"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    <path
-      d="M0 14.1667C0 15.5833 1.08333 16.6667 2.5 16.6667H14.1667C15.5833 16.6667 16.6667 15.5833 16.6667 14.1667V7.5H0V14.1667ZM14.1667 1.66667H12.5V0.833333C12.5 0.333333 12.1667 0 11.6667 0C11.1667 0 10.8333 0.333333 10.8333 0.833333V1.66667H5.83333V0.833333C5.83333 0.333333 5.5 0 5 0C4.5 0 4.16667 0.333333 4.16667 0.833333V1.66667H2.5C1.08333 1.66667 0 2.75 0 4.16667V5.83333H16.6667V4.16667C16.6667 2.75 15.5833 1.66667 14.1667 1.66667Z"
       fill="currentColor"
     />
   </svg>

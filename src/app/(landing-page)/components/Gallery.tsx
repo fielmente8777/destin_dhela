@@ -9,7 +9,7 @@ export const Gallery: React.FC = () => {
 
   return (
     <section className="w-full overflow-hidden">
-      {/* 4 Image Full-Bleed Grid Display */}
+      {/* Image Grid */}
       <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-0">
         {images.map((src, index) => (
           <div
