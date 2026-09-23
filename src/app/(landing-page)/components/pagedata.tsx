@@ -133,7 +133,7 @@ export const landingPageData: LandingPageDataProps = {
     title: "Your Complete <br class=\"block sm:hidden\" /><span class=\"italic font-fraunces font-bold\">Corbett</span><br class=\"hidden sm:block\" /> Getaway",
     description: "Green mornings, safari days, rooftop swims and star filled nights at a<br class=\"hidden sm:inline\" /> comfortable retreat made for time together.",
     benefits: "Save 15% when you book direct · Free cancellation on most dates*",
-    images: ["/dd/banner.png", "/dd/banner.png", "/dd/banner.png"],
+    images: ["/dd/banner1.jpg", "/dd/banner.png", "/dd/banner3.jpg"],
   },
   step: [
     { title: "450 sq. ft. Spacious Rooms" },
@@ -177,10 +177,10 @@ export const landingPageData: LandingPageDataProps = {
     ],
     images: [
       // "/dd/room.png",
-      "/dd/gallery1.png",
-      "/dd/gallery2.png",
-      "/dd/gallery3.png",
-      "/dd/gallery4.png",
+      "/dd/acc1.jpeg",
+      "/dd/acc2.jpeg",
+      "/dd/acc3.jpeg",
+      "/dd/acc4.jpeg",
     ],
   },
   safariStargazing: {
@@ -256,10 +256,10 @@ export const landingPageData: LandingPageDataProps = {
     heading: "A Glimpse Of Destinn",
     subtext: "Every space, moment and detail, captured.",
     images: [
-      "/dd/gallery1.png",
-      "/dd/gallery2.png",
-      "/dd/gallery3.png",
-      "/dd/gallery4.png",
+      "/dd/acc1.jpeg",
+      "/dd/acc2.jpeg",
+      "/dd/acc3.jpeg",
+      "/dd/acc4.jpeg",
     ],
   },
   faqs: {
@@ -284,12 +284,12 @@ export const landingPageData: LandingPageDataProps = {
       },
       {
         q: "How Do I Confirm A Booking?",
-        a: "You can book direct through the form on this page or connect with our team on WhatsApp/Phone at ${contact.phone[0]} to receive immediate confirmation and 15% off.",
+        a: `You can book direct through the form on this page or connect with our team on WhatsApp/Phone at ${contact.phone[0]} to receive immediate confirmation and 15% off.`,
       },
     ],
   },
   contact: {
-    location: "lorem ipsum dolor , Ramnagar, Jim Corbett, Uttarakhand",
+    location: contact.address,
     phone: contact.phone[0],
     email: contact.email,
     copyright: "© Destinn Dhela Retreat by Jungle Diaries · A Unit of Devine Wild Bloom Resort LLP",

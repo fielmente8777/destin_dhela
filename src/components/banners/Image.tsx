@@ -65,7 +65,7 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
       </Swiper>
 
       {/* Hero Content */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center lg:justify-start text-center pt-10 sm:pt-14 lg:pt-[281px] pb-6 sm:pb-8 lg:pb-0 pointer-events-auto select-text px-3 sm:px-0">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center lg:justify-start text-center pt-10 sm:pt-14 lg:pt-[281px] pb-6 sm:pb-8 lg:pb-0 pointer-events-none select-text px-3 sm:px-0">
         <Container className="w-full flex flex-col items-center justify-center text-center">
           <div className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
             {/* Badge */}

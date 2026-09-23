@@ -69,9 +69,14 @@ export const LandingFooter: React.FC<Props> = ({
             <span className="mt-0.5 text-primary shrink-0">
               <FooterLocationIcon />
             </span>
-            <p className="font-dm-sans font-normal text-[18px] leading-[26px] text-body-text">
+            <Link
+              href={defaultContact.addressLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-dm-sans font-normal text-[18px] leading-[26px] text-body-text hover:text-primary transition-colors"
+            >
               {address}
-            </p>
+            </Link>
           </div>
         </div>
 

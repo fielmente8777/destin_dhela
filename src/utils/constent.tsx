@@ -7,19 +7,20 @@ Please share the best available options and rates.
 Thank you!`);
 
 export const contact = {
-  email: "demo@gmail.com",
+  email: "destindhellaretreat@gmail.com",
   mapUrl:
-    "https://maps.google.com/maps?q=Destinn+Dhela+Retreat+Dhela+Road+Ramnagar+Jim+Corbett+Uttarakhand&t=&z=14&ie=UTF8&iwloc=&output=embed",
-  phone: ["+91 XXXXX XXXXX"],
-  address: "lorem ipsum dolor , Ramnagar, Jim Corbett, Uttarakhand",
+    "https://maps.google.com/maps?q=Destinn+Dhela+Retreat+Village+Himmatpur+Dotiyal+Dhela+Road+Ramnagar+Disst+Nainital+Uttarakhand+244715&t=&z=14&ie=UTF8&iwloc=&output=embed",
+  phone: ["+91 92582 34036"],
+  address:
+    "Village Himmatpur Dotiyal, Dhela Road Ramnagar, Disst Nainital, Uttarakhand 244715",
   addressLink:
-    "https://maps.google.com/?q=Destinn+Dhela+Retreat+Dhela+Road+Ramnagar+Jim+Corbett+Uttarakhand",
+    "https://maps.google.com/?q=Village+Himmatpur+Dotiyal+Dhela+Road+Ramnagar+Disst+Nainital+Uttarakhand+244715",
   socialMedia: {
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com/",
   },
-  callCta: `tel:+91XXXXXXXXXX`,
-  WhatsappCta: `https://wa.me/+91XXXXXXXXXX?text=${enCodeText}`,
+  callCta: `tel:+919258234036`,
+  WhatsappCta: `https://wa.me/+919258234036?text=${enCodeText}`,
   formDomain: "Destinn Dhela",
   formHid: "",
 };
