@@ -176,7 +176,7 @@ export const landingPageData: LandingPageDataProps = {
       "Suited to families, couples and small groups",
     ],
     images: [
-      "/dd/room.png",
+      // "/dd/room.png",
       "/dd/gallery1.png",
       "/dd/gallery2.png",
       "/dd/gallery3.png",
