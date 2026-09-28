@@ -57,7 +57,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Destinn Dhela | Jim Corbett",
   description:
-    "Leave the city behind. Let the forest set the pace. A boutique luxury escape on Dhela Road, Jim Corbett.",
+    "Leave the city behind. Let the forest set the pace. A boutique luxury escape on Destinn Dhela Road, Jim Corbett.",
 };
 
 export default function RootLayout({

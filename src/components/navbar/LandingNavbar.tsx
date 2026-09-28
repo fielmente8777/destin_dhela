@@ -13,7 +13,7 @@ const LandingNavbar = () => {
   const pathName = usePathname();
   const { setIsOpenFormPopUp } = useWebContext();
 
-  if (pathName === "/thank-you/") {
+  if (pathName?.startsWith("/thank-you")) {
     return null;
   }
 
@@ -28,7 +28,7 @@ const LandingNavbar = () => {
           <div className="relative w-full h-full flex items-center justify-center">
             <Image
               src={landingPageData.hero.logo || "/dd/Logo.png"}
-              alt="Destinn Logo"
+              alt="Destinn Dhela Logo"
               fill
               priority
               className="object-contain"

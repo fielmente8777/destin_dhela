@@ -62,7 +62,7 @@ export const Room: React.FC<Props> = ({ data }) => {
               <SwiperSlide key={idx} className="relative w-full h-full">
                 <Image
                   src={img}
-                  alt={`Destinn Spacious Room ${idx + 1}`}
+                  alt={`Destinn Dhela Spacious Room ${idx + 1}`}
                   fill
                   className="object-cover object-center rounded-[8px]"
                 />

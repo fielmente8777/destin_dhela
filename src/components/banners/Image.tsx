@@ -53,7 +53,7 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
           <SwiperSlide key={idx} className="relative w-full h-full">
             <Image
               src={img}
-              alt={`Destinn Retreat Banner ${idx + 1}`}
+              alt={`Destinn Dhela Retreat Banner ${idx + 1}`}
               fill
               priority={idx === 0}
               className="object-cover object-center"

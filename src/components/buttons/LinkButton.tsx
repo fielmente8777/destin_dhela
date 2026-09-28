@@ -47,12 +47,13 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
     );
   }
 
-  // Enquire Now (WhatsApp) / Call / External Links
+  const isInternal = href.startsWith("/") || href.startsWith("#");
+
   return (
     <Link
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isInternal ? undefined : "_blank"}
+      rel={isInternal ? undefined : "noopener noreferrer"}
       className={`inline-flex items-center justify-center gap-2 cursor-pointer transition-all ${className}`}
       {...props}
     >

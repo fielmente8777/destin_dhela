@@ -7,7 +7,7 @@ import { IoCall } from "react-icons/io5";
 function Call({ callNumber }: { callNumber: string | string[] }) {
   const pathName = usePathname();
   
-  if (pathName === "/thank-you/") {
+  if (pathName?.startsWith("/thank-you")) {
     return null;
   }
   const rawNumber = Array.isArray(callNumber) ? callNumber[0] || "" : (callNumber || "");

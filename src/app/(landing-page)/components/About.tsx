@@ -58,7 +58,7 @@ export const About: React.FC<Props> = ({ data }) => {
 
       {/* Action Buttons */}
       <div className="flex justify-center mt-8 sm:mt-10 lg:mt-[48px]">
-        <SectionActionButtons section="Why Destinn" className="justify-center" />
+        <SectionActionButtons section="Why Destinn Dhela" className="justify-center" />
       </div>
     </SectionWithContainer>
   );

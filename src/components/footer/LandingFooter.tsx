@@ -52,7 +52,7 @@ export const LandingFooter: React.FC<Props> = ({
             <div className="relative w-full h-full">
               <Image
                 src={heroLogo}
-                alt="Destinn Logo"
+                alt="Destinn Dhela Logo"
                 fill
                 className="object-contain"
               />

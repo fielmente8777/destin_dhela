@@ -139,14 +139,14 @@ export const landingPageData: LandingPageDataProps = {
     { title: "450 sq. ft. Spacious Rooms" },
     { title: "Rooftop Infinity Pool" },
     { title: "Direct Booking Offer: Save 15% + Free Breakfast" },
-    { title: "20 min. to Dhela Safari Gate" },
+    { title: "20 min. to Destinn Dhela Safari Gate" },
     { title: "Kumaoni & Multi-cuisine Dining" },
   ],
   about: {
-    tag: "WHY DESTINN",
+    tag: "WHY DESTINN DHELA",
     heading: "Stay Close To The Wild.<br />Stay Close To Comfort.",
     description:
-      "Most stays near Corbett give you a room and a view. Destinn gives you a reason to linger between safaris, space, food, leisure and a signature night sky. A 14 room retreat where the Corbett landscape is part of every day, from private balcony views to unhurried evenings on the rooftop.",
+      "Most stays near Corbett give you a room and a view. Destinn Dhela gives you a reason to linger between safaris, space, food, leisure and a signature night sky. A 14 room retreat where the Corbett landscape is part of every day, from private balcony views to unhurried evenings on the rooftop.",
     featureCards: [
       {
         icon: <SettleIcon />,
@@ -191,7 +191,7 @@ export const landingPageData: LandingPageDataProps = {
       {
         step: "01",
         title: "Explore",
-        description: "Reach the Dhela Safari Entrance Gate in approximately 20 minutes.",
+        description: "Reach the Destinn Dhela Safari Entrance Gate in approximately 20 minutes.",
       },
       {
         step: "02",
@@ -211,7 +211,7 @@ export const landingPageData: LandingPageDataProps = {
     ],
   },
   stargazingBanner: {
-    tag: "A SIGNATURE DESTINN EXPERIENCE",
+    tag: "A SIGNATURE DESTINN DHELA EXPERIENCE",
     heading: "Evenings End Beneath A<br />Sky Full Of Stars.",
     description:
       "After the forest quiets, the night becomes the destination. Slow down<br class=\"hidden sm:inline\" /> on the rooftop and discover the sky through dedicated astronomical<br class=\"hidden sm:inline\" /> equipment.",
@@ -236,24 +236,24 @@ export const landingPageData: LandingPageDataProps = {
         title: "Jim's Sky Grill",
         subtitle: "A 35-cover rooftop dining experience.",
         description:
-          "Grilled delicacies served with panoramic mountain and greenery views, Destinn's evening centrepiece.",
+          "Grilled delicacies served with panoramic mountain and greenery views, Destinn Dhela's evening centrepiece.",
       },
     ],
   },
   location: {
     tag: "LOCATION",
-    heading: '<span class="sm:whitespace-nowrap">Close To Ramnagar. Convenient</span><br class="hidden sm:block" /> For Dhela.',
+    heading: '<span class="sm:whitespace-nowrap">Close To Ramnagar. Convenient</span><br class="hidden sm:block" /> For Destinn Dhela.',
     subtext: "Practical distances, not just \"in the middle of nature\", here's exactly what's nearby",
     matrix: [
       { place: "Ramnagar town", distance: "≈ 4 km" },
       { place: "Ramnagar railway station", distance: "≈ 4 km" },
-      { place: "Dhela Safari Entrance Gate", distance: "≈ 8 km" },
+      { place: "Destinn Dhela Safari Entrance Gate", distance: "≈ 8 km" },
       { place: "Pantnagar airport", distance: "≈ 8 km" },
     ],
   },
   gallery: {
     tag: "EXPLORE GALLERY",
-    heading: "A Glimpse Of Destinn",
+    heading: "A Glimpse Of Destinn Dhela",
     subtext: "Every space, moment and detail, captured.",
     images: [
       "/dd/acc1.jpeg",
@@ -267,8 +267,8 @@ export const landingPageData: LandingPageDataProps = {
     heading: "Before You Enquire!",
     items: [
       {
-        q: "How Far Is Destinn From The Dhela Safari Zone?",
-        a: "Destinn is located just approximately 8 km (around 15-20 minutes drive) from the Dhela Safari Entrance Gate in Jim Corbett.",
+        q: "How Far Is Destinn Dhela From The Destinn Dhela Safari Zone?",
+        a: "Destinn Dhela is located just approximately 8 km (around 15-20 minutes drive) from the Destinn Dhela Safari Entrance Gate in Jim Corbett.",
       },
       {
         q: "Is Stargazing Included In The Stay?",
@@ -276,7 +276,7 @@ export const landingPageData: LandingPageDataProps = {
       },
       {
         q: "Do You Host Families And Small Groups?",
-        a: "Absolutely. With 14 spacious rooms (approx. 450 sq. ft. each), rooftop infinity pool, gardens, and indoor games, Destinn is ideal for families and celebrations.",
+        a: "Absolutely. With 14 spacious rooms (approx. 450 sq. ft. each), rooftop infinity pool, gardens, and indoor games, Destinn Dhela is ideal for families and celebrations.",
       },
       {
         q: "What About Food?",

@@ -42,7 +42,7 @@ export const Gallery: React.FC<Props> = ({ data }) => {
             <SwiperSlide key={index} className="relative w-full h-full">
               <Image
                 src={src}
-                alt={`Destinn Gallery Showcase ${index + 1}`}
+                alt={`Destinn Dhela Gallery Showcase ${index + 1}`}
                 fill
                 className="object-cover object-center"
                 sizes="100vw"
@@ -79,7 +79,7 @@ export const Gallery: React.FC<Props> = ({ data }) => {
           >
             <Image
               src={src}
-              alt={`Destinn Gallery Showcase ${index + 1}`}
+              alt={`Destinn Dhela Gallery Showcase ${index + 1}`}
               fill
               className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 1024px) 50vw, 25vw"

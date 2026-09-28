@@ -20,7 +20,7 @@ const OfferSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (pathName === "/thank-you/") {
+  if (pathName?.startsWith("/thank-you")) {
     return null;
   }
 

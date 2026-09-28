@@ -21,7 +21,7 @@ export const StargazingBanner: React.FC<Props> = ({ data }) => {
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={data.image}
-          alt="Stargazing at Destinn"
+          alt="Stargazing at Destinn Dhela"
           fill
           className="object-cover object-center"
         />

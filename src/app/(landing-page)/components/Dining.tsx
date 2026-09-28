@@ -100,7 +100,7 @@ export const Dining: React.FC<Props> = ({ data }) => {
         <div className="relative w-full max-w-[648px] lg:w-[648px] shrink-0 h-[320px] sm:h-[460px] lg:h-[655px] rounded-[8px] overflow-hidden shadow-sm order-1 lg:order-2">
           <Image
             src={data.image}
-            alt="Dining at Destinn"
+            alt="Dining at Destinn Dhela"
             fill
             className="object-cover object-center rounded-[8px]"
           />
