@@ -21,10 +21,7 @@ const LandingNavbar = () => {
     <header className="absolute top-[15px] left-0 right-0 z-40 w-full bg-transparent">
       <Container className="flex items-center justify-between">
         {/* Logo */}
-        <Link
-          href="/"
-          className="w-[115px] h-[60px] sm:w-[152px] sm:h-[80px] bg-white rounded-[8px] p-0 shadow-md flex items-center justify-center border border-white/60 hover:shadow-lg transition-shadow shrink-0 overflow-hidden"
-        >
+        <div className="w-[115px] h-[60px] sm:w-[152px] sm:h-[80px] bg-white rounded-[8px] p-0 shadow-md flex items-center justify-center border border-white/60 shrink-0 overflow-hidden">
           <div className="relative w-full h-full flex items-center justify-center">
             <Image
               src={landingPageData.hero.logo || "/dd/Logo.png"}
@@ -34,7 +31,7 @@ const LandingNavbar = () => {
               className="object-contain"
             />
           </div>
-        </Link>
+        </div>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-[8px] sm:gap-[12px]">

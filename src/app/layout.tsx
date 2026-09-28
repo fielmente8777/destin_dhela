@@ -71,8 +71,8 @@ export default function RootLayout({
       className={`${fraunces.variable} ${varelaRound.variable} ${inter.variable} ${dmSans.variable} ${openSans.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans text-[#5F6764]">
-        <LandingNavbar />
         <WebProvider>
+          <LandingNavbar />
           {children}
           <PopUpForm />
           <ImagePopup />
