@@ -7,7 +7,7 @@ Please share the best available options and rates.
 Thank you!`);
 
 export const contact = {
-  email: "destindhellaretreat@gmail.com",
+  email: "destinndhellaretreat@gmail.com",
   mapUrl:
     "https://maps.google.com/maps?q=Destinn+Dhela+Retreat+Village+Himmatpur+Dotiyal+Dhela+Road+Ramnagar+Disst+Nainital+Uttarakhand+244715&t=&z=14&ie=UTF8&iwloc=&output=embed",
   phone: ["+91 92582 14866"],
