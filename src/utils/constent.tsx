@@ -10,7 +10,7 @@ export const contact = {
   email: "destindhellaretreat@gmail.com",
   mapUrl:
     "https://maps.google.com/maps?q=Destinn+Dhela+Retreat+Village+Himmatpur+Dotiyal+Dhela+Road+Ramnagar+Disst+Nainital+Uttarakhand+244715&t=&z=14&ie=UTF8&iwloc=&output=embed",
-  phone: ["+91 92582 34036"],
+  phone: ["+91 92582 14866"],
   address:
     "Village Himmatpur Dotiyal, Dhela Road Ramnagar, Disst Nainital, Uttarakhand 244715",
   addressLink:
@@ -19,8 +19,8 @@ export const contact = {
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com/",
   },
-  callCta: `tel:+919258234036`,
-  WhatsappCta: `https://wa.me/+919258234036?text=${enCodeText}`,
+  callCta: `tel:+919258214866`,
+  WhatsappCta: `https://wa.me/+919258214866?text=${enCodeText}`,
   formDomain: "Destinn Dhela",
   formHid: "",
 };
