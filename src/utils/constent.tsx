@@ -21,7 +21,7 @@ export const contact = {
   },
   callCta: `tel:+919258214866`,
   WhatsappCta: `https://wa.me/+919258214866?text=${enCodeText}`,
-  formDomain: "Destinn Dhela",
+  formDomain: "destindhellaretreat",
   formHid: "",
 };
 

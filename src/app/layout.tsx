@@ -82,18 +82,16 @@ export default function RootLayout({
         </WebProvider>
       </body>
 
-      <Script id="chatbot-config" strategy="afterInteractive">
-        {`
+      {/* Eazbot (Next.js, e.g. in app/layout.jsx) */}
+<Script id="eazbot-config" strategy="afterInteractive">
+  {`
     window.eazbotConfig = {
-       ndid: "3b6fb698-ab43-4bdc-a1a9-eac76af9d3be",
-       hid: "40177727",
+      ndid: "3b9308d4-6148-4635-a2da-f8c041a7edd6",
+      hid: "56495434",
     };
   `}
-      </Script>
-      <Script
-        src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
-        strategy="afterInteractive"
-      />
+</Script>
+<Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" strategy="afterInteractive" />
     </html>
   );
 }
