@@ -128,12 +128,12 @@ export const landingPageData: LandingPageDataProps = {
     "Direct Booking Offer: Save 15% + Free Breakfast",
   ],
   hero: {
-    logo: "/dd/Logo.png",
+    logo: "/dd/Logo1.jpeg",
     tag: "DESTINN DHELA RETREAT BY JUNGLE DIARIES · JIM CORBETT",
     title: "Your Complete <br class=\"block sm:hidden\" /><span class=\"italic font-fraunces font-bold\">Corbett</span><br class=\"hidden sm:block\" /> Getaway",
     description: "Green mornings, safari days, rooftop swims and star filled nights at a<br class=\"hidden sm:inline\" /> comfortable retreat made for time together.",
     benefits: "Save 15% when you book direct · Free cancellation on most dates*",
-    images: ["/dd/banner1.jpg", "/dd/banner.png", "/dd/banner3.jpg"],
+    images: ["/new/banner1.webp", "/new/banner2.webp", "/new/banner3.webp", "/new/view.webp", "/new/banner5.webp"],
   },
   step: [
     { title: "450 sq. ft. Spacious Rooms" },
@@ -177,16 +177,17 @@ export const landingPageData: LandingPageDataProps = {
     ],
     images: [
       // "/dd/room.png",
-      "/dd/acc1.jpeg",
-      "/dd/acc2.jpeg",
-      "/dd/acc3.jpeg",
-      "/dd/acc4.jpeg",
+      "/new/room1.webp",
+      "/new/room2.webp",
+      "/new/interior.webp",
+      "/new/exterior.webp",
+      "/new/bathroom.webp",
     ],
   },
   safariStargazing: {
     tag: "FROM SAFARI TO STARGAZING",
     heading: "A Full Day Of Corbett, All<br />In One Stay.",
-    image: "/dd/safari.png",
+    image: "/new/garden.webp",
     steps: [
       {
         step: "01",
@@ -215,14 +216,14 @@ export const landingPageData: LandingPageDataProps = {
     heading: "Evenings End Beneath A<br />Sky Full Of Stars.",
     description:
       "After the forest quiets, the night becomes the destination. Slow down<br class=\"hidden sm:inline\" /> on the rooftop and discover the sky through dedicated astronomical<br class=\"hidden sm:inline\" /> equipment.",
-    image: "/dd/TeleScope.png",
+    image: "/new/banner4.webp",
   },
   dining: {
     tag: "FOOD & TOGETHERNESS",
     heading: "Good Days Deserve<br />Memorable Meals.",
     description:
       "Sir Jim's Dining serves multi-cuisine comfort and Kumaoni flavours, while Jim's Sky Grill turns dinner into a rooftop evening. Indoor games, gardens and gathering spaces make room for families and small celebrations.",
-    image: "/dd/food.png",
+    image: "/new/restaurant.webp",
     outlets: [
       {
         type: "dining",
@@ -256,10 +257,16 @@ export const landingPageData: LandingPageDataProps = {
     heading: "A Glimpse Of Destinn Dhela",
     subtext: "Every space, moment and detail, captured.",
     images: [
-      "/dd/acc1.jpeg",
-      "/dd/acc2.jpeg",
-      "/dd/acc3.jpeg",
-      "/dd/acc4.jpeg",
+      "/new/garden.webp",
+      "/new/rooftop.webp",
+      "/new/food.webp",
+      "/new/room2.webp",
+      "/new/pool.webp",
+      "/new/restaurant.webp",
+      "/new/reception.webp",
+      "/new/sports.webp",
+      "/new/exterior.webp",
+      "/new/interior.webp",
     ],
   },
   faqs: {

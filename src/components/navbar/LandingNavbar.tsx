@@ -24,7 +24,7 @@ const LandingNavbar = () => {
         <div className="w-[115px] h-[60px] sm:w-[152px] sm:h-[80px] bg-white rounded-[8px] p-0 shadow-md flex items-center justify-center border border-white/60 shrink-0 overflow-hidden">
           <div className="relative w-full h-full flex items-center justify-center">
             <Image
-              src={landingPageData.hero.logo || "/dd/Logo.png"}
+              src={landingPageData.hero.logo || "/dd/Logo1.jpeg"}
               alt="Destinn Dhela Logo"
               fill
               priority

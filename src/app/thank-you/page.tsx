@@ -20,7 +20,7 @@ export default function ThankYou() {
           <div className="max-w-[220px] sm:max-w-sm w-full relative aspect-4/2 bg-white rounded-lg shadow-sm border border-sand-border/50 overflow-hidden flex items-center justify-center p-3">
             <div className="relative w-full h-full">
               <Image
-                src={landingPageData.hero.logo || "/dd/Logo.png"}
+                src={landingPageData.hero.logo || "/dd/Logo1.jpeg"}
                 alt="Destinn Dhela Logo"
                 fill
                 className="object-contain p-2"

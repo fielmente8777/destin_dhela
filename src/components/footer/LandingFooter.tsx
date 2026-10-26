@@ -16,7 +16,7 @@ interface Props {
 
 export const LandingFooter: React.FC<Props> = ({
   data,
-  heroLogo = "/dd/Logo.png",
+  heroLogo = "/dd/Logo1.jpeg",
 }) => {
   const phone = data?.phone || defaultContact.phone[0];
   const email = data?.email || defaultContact.email;
