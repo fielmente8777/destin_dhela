@@ -67,7 +67,8 @@ export interface DiningProps {
   tag: string;
   heading: string;
   description: string;
-  image: string;
+  image?: string;
+  images?: string[];
   outlets: DiningOutletItem[];
 }
 
@@ -224,6 +225,7 @@ export const landingPageData: LandingPageDataProps = {
     description:
       "Sir Jim's Dining serves multi-cuisine comfort and Kumaoni flavours, while Jim's Sky Grill turns dinner into a rooftop evening. Indoor games, gardens and gathering spaces make room for families and small celebrations.",
     image: "/new/restaurant.webp",
+    images: ["/new/restaurant.webp", "/new/rooftop.webp"],
     outlets: [
       {
         type: "dining",
@@ -262,10 +264,10 @@ export const landingPageData: LandingPageDataProps = {
       "/new/food.webp",
       "/new/room2.webp",
       "/new/pool.webp",
-      "/new/restaurant.webp",
-      "/new/reception.webp",
-      "/new/sports.webp",
-      "/new/exterior.webp",
+      // "/new/restaurant.webp",
+      // "/new/reception.webp",
+      // "/new/sports.webp",
+      // "/new/exterior.webp",
       "/new/interior.webp",
     ],
   },
