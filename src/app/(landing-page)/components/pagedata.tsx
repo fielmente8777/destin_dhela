@@ -134,7 +134,7 @@ export const landingPageData: LandingPageDataProps = {
     title: "Your Complete <br class=\"block sm:hidden\" /><span class=\"italic font-fraunces font-bold\">Corbett</span><br class=\"hidden sm:block\" /> Getaway",
     description: "Green mornings, safari days, rooftop swims and star filled nights at a<br class=\"hidden sm:inline\" /> comfortable retreat made for time together.",
     benefits: "Save 15% when you book direct · Free cancellation on most dates*",
-    images: ["/new/banner1.webp", "/new/banner2.webp", "/new/banner3.webp", "/new/view.webp", "/new/banner5.webp"],
+    images: ["/new/banner1.webp", "/new/banner2.webp", "/new/banner3.webp", "/new/banner4.webp", "/new/banner5.webp"],
   },
   step: [
     { title: "450 sq. ft. Spacious Rooms" },
