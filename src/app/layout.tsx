@@ -74,14 +74,14 @@ export default function RootLayout({
         {/* <!-- Google tag (gtag.js) --> */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-W0C4K8734D"
+          src="https://www.googletagmanager.com/gtag/js?id=G-E776ESD01S"
         ></script>
         <Script id="google-analytics" strategy="afterInteractive">
-          {` window.dataLayer = window.dataLayer || [];
+          {`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-W0C4K8734D');`}
+  gtag('config', 'G-E776ESD01S');`}
         </Script>
       </head>
       <body className="min-h-full flex flex-col font-sans text-[#5F6764]">
