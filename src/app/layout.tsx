@@ -70,6 +70,20 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${varelaRound.variable} ${inter.variable} ${dmSans.variable} ${openSans.variable} ${manrope.variable} h-full antialiased`}
     >
+      <head>
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-W0C4K8734D"
+        ></script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0C4K8734D');`}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col font-sans text-[#5F6764]">
         <WebProvider>
           <LandingNavbar />
@@ -83,15 +97,18 @@ export default function RootLayout({
       </body>
 
       {/* Eazbot (Next.js, e.g. in app/layout.jsx) */}
-<Script id="eazbot-config" strategy="afterInteractive">
-  {`
+      <Script id="eazbot-config" strategy="afterInteractive">
+        {`
     window.eazbotConfig = {
       ndid: "3b9308d4-6148-4635-a2da-f8c041a7edd6",
       hid: "56495434",
     };
   `}
-</Script>
-<Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" strategy="afterInteractive" />
+      </Script>
+      <Script
+        src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
+        strategy="afterInteractive"
+      />
     </html>
   );
 }
