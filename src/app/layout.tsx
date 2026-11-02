@@ -71,6 +71,10 @@ export default function RootLayout({
       className={`${fraunces.variable} ${varelaRound.variable} ${inter.variable} ${dmSans.variable} ${openSans.variable} ${manrope.variable} h-full antialiased`}
     >
       <head>
+        <meta
+          name="google-site-verification"
+          content="h6gI6z_cFXceQKKOKKO4Yua9hWo0fvyY799yW3UQp20"
+        />
         {/* <!-- Google tag (gtag.js) --> */}
         <script
           async
