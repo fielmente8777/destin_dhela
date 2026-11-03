@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Form1 from "@/src/components/forms/Form1";
 import { ContactProps } from "@/src/app/(landing-page)/components/pagedata";
-import { contact as defaultContact } from "@/src/utils/constent";
+import { contact, contact as defaultContact } from "@/src/utils/constent";
 import { PhoneIcon, EmailIcon, FooterLocationIcon } from "@/src/utils/icons";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
 
@@ -102,10 +102,10 @@ export const LandingFooter: React.FC<Props> = ({
                 <EmailIcon />
               </span>
               <Link
-                href={`mailto:${email}`}
+                href={`mailto:${contact.email}`}
                 className="font-dm-sans font-normal text-[18px] leading-[26px] text-body-text hover:text-primary transition-colors"
               >
-                Email: {email}
+                Email: {contact.email}
               </Link>
             </div>
           </div>
