@@ -111,6 +111,7 @@ export const LandingFooter: React.FC<Props> = ({
           </div>
         </div>
       </SectionWithContainer>
+      
 
       {/* Copyright Bar */}
       <SectionWithContainer
