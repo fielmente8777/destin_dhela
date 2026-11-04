@@ -75,6 +75,15 @@ export default function RootLayout({
           name="google-site-verification"
           content="h6gI6z_cFXceQKKOKKO4Yua9hWo0fvyY799yW3UQp20"
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-M63FLTC7"
+        ></script>
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());`}
+        </Script>
         {/* <!-- Google tag (gtag.js) --> */}
         <script
           async
